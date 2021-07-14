@@ -110,7 +110,8 @@ body {
   background-color: red; }
 
 .card__item {
-  width: max-content;
+  width: 28rem;
+  padding: 0.7rem;
   border: none;
   border-bottom-left-radius: 0.7rem;
   border-bottom-right-radius: 0.7rem; }
@@ -127,8 +128,9 @@ body {
     font-size: 1.25rem;
     padding: 0.5rem;
     border: 2px solid black;
+    margin: 0.5rem;
     border-radius: 0.7rem;
-    width: 90px; }
+    width: 50%; }
   .card__item--calling-code {
     display: flex;
     flex-direction: column;
@@ -136,12 +138,14 @@ body {
     align-items: center;
     word-wrap: inherit;
     font-size: 1.25rem;
-    width: 90px;
+    margin: 0.5rem;
+    width: 50%;
     padding: 0.5rem;
     border: 2px solid black;
     border-radius: 0.7rem; }
   .card__item--image img {
-    height: 10rem;
+    height: 17rem;
+    width: 100%;
     border-top-left-radius: 0.7rem;
     border-top-right-radius: 0.7rem; }
   .card__item--title {
@@ -152,13 +156,18 @@ body {
     text-align: center;
     font-size: 1.25rem;
     width: 100%;
+    margin: 0.5rem;
     padding: 0.5rem;
     border: 2px solid black;
     border-radius: 0.7rem; }
-  .card__item--bottom-row {
+  .card__item--middle-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between; }
+  .card__item--bottom-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
   .card__item--region {
     display: flex;
     text-align: center;
@@ -167,7 +176,8 @@ body {
     padding: 0.5rem;
     border: 2px solid black;
     border-radius: 0.7rem;
-    width: 90px; }
+    margin: 0.5rem;
+    width: 50%; }
   .card__item--language {
     text-align: center;
     width: fit-content;
@@ -176,7 +186,8 @@ body {
     padding: 0.5rem;
     border: 2px solid black;
     border-radius: 0.7rem;
-    width: 90px; }
+    margin: 0.5rem;
+    width: 50%; }
   .card__item--btn button {
     border: none;
     padding: 1rem;
@@ -239,6 +250,8 @@ body {
 
 .section-all .grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  padding-left: 15rem;
+  padding-right: 15rem;
+  grid-template-columns: repeat(4, 1fr);
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.5rem; }
