@@ -106,6 +106,95 @@ body {
   .paragraph:not(:last-child) {
     margin-bottom: 3rem; }
 
+.btn-primary {
+  background-color: red; }
+
+.card__item {
+  width: 28rem;
+  padding: 0.7rem;
+  border: none;
+  border-bottom-left-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem; }
+  .card__item--top-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  .card__item--currency {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    border: 2px solid black;
+    margin: 0.5rem;
+    border-radius: 0.7rem;
+    width: 50%; }
+  .card__item--calling-code {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    word-wrap: inherit;
+    font-size: 1.25rem;
+    margin: 0.5rem;
+    width: 50%;
+    padding: 0.5rem;
+    border: 2px solid black;
+    border-radius: 0.7rem; }
+  .card__item--image img {
+    height: 17rem;
+    width: 100%;
+    border-top-left-radius: 0.7rem;
+    border-top-right-radius: 0.7rem; }
+  .card__item--title {
+    text-align: center; }
+  .card__item--capital {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.25rem;
+    width: 100%;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 2px solid black;
+    border-radius: 0.7rem; }
+  .card__item--middle-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+  .card__item--bottom-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+  .card__item--region {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    border: 2px solid black;
+    border-radius: 0.7rem;
+    margin: 0.5rem;
+    width: 50%; }
+  .card__item--language {
+    text-align: center;
+    width: fit-content;
+    word-wrap: break-word;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    border: 2px solid black;
+    border-radius: 0.7rem;
+    margin: 0.5rem;
+    width: 50%; }
+  .card__item--btn button {
+    border: none;
+    padding: 1rem;
+    font-family: inherit;
+    border-radius: 0.7rem;
+    width: 100%; }
+
 .section-footer {
   background-color: #ddd; }
   .section-footer .content {
@@ -158,3 +247,11 @@ body {
       border-right: none; }
     .section-search .search__content--input input:focus {
       outline: none; }
+
+.section-all .grid {
+  display: grid;
+  padding-left: 15rem;
+  padding-right: 15rem;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem; }
