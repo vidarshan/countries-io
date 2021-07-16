@@ -7,17 +7,18 @@ import CountryScreen from './screens/CountryScreen';
 import AboutScreen from './screens/AboutScreen';
 import TopNav from './components/TopNav';
 import BottomFooter from './components/BottomFooter';
+import Layout from 'antd/lib/layout/layout';
 
 function App() {
   return (
     <Router>
-      <TopNav></TopNav>
-      <main>
+      <Layout>
+        <TopNav></TopNav>
         <Route path='/' component={HomeScreen} exact></Route>
         <Route path='/all' component={AllScreen}></Route>
         <Route path='/country/:name' component={CountryScreen}></Route>
         <Route path='/about' component={AboutScreen}></Route>
-      </main>
+      </Layout>
       <BottomFooter></BottomFooter>
     </Router>
     // <div className='App'>
