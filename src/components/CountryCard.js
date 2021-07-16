@@ -8,28 +8,17 @@ import {
 
 const { Meta } = Card;
 
-const CountryCard = () => {
+const CountryCard = ({ country }) => {
   return (
     <Card
       style={{ width: 300 }}
-      cover={
-        <img
-          alt='example'
-          src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
-        />
-      }
+      cover={<img alt='example' src={country.flag} />}
       actions={[
         <SettingOutlined key='setting' />,
         <EditOutlined key='edit' />,
         <EllipsisOutlined key='ellipsis' />,
       ]}>
-      <Meta
-        avatar={
-          <Avatar src='https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png' />
-        }
-        title='Card title'
-        description='This is the description'
-      />
+      <Meta title={country.name} description='This is the description' />
     </Card>
   );
 };
