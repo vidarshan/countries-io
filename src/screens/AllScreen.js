@@ -23,7 +23,7 @@ const AllScreen = () => {
     <Row className='margin-extra'>
       {map(countries, (country) => {
         return (
-          <Col xs={24} sm={12} md={12} lg={8} xl={6} className='gutter-row'>
+          <Col>
             <CountryCard country={country}></CountryCard>
           </Col>
         );
