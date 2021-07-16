@@ -5,12 +5,15 @@ import { getCountry } from '../actions/countryActions';
 const CountryScreen = ({ match }) => {
   const dispatch = useDispatch();
 
-  const country = useSelector((state) => state.getCountry);
+  const countryInfo = useSelector((state) => state.getCountry);
+
+  const { country, loading } = countryInfo;
 
   useEffect(() => {
     dispatch(getCountry(match.params.name));
+    console.log('country : ');
     console.log(country);
-  }, []);
+  }, [match]);
 
   return <div>Country Screen</div>;
 };

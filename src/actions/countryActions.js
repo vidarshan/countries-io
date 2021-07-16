@@ -3,7 +3,9 @@ import {
   GET_ALL_COUNTRIES_FAIL,
   GET_ALL_COUNTRIES_REQUEST,
   GET_ALL_COUNTRIES_SUCCESS,
+  GET_COUNTRY_FAIL,
   GET_COUNTRY_REQUEST,
+  GET_COUNTRY_SUCCESS,
 } from '../constants/countryConstants';
 
 export const getAllCountries = () => async (dispatch) => {
@@ -40,12 +42,12 @@ export const getCountry = (countryName) => async (dispatch) => {
     );
 
     dispatch({
-      type: GET_ALL_COUNTRIES_SUCCESS,
+      type: GET_COUNTRY_SUCCESS,
       payload: data,
     });
   } catch (error) {
     dispatch({
-      type: GET_ALL_COUNTRIES_FAIL,
+      type: GET_COUNTRY_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
