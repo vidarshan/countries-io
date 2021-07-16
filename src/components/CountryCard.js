@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import { Card, Avatar } from 'antd';
 import {
   EditOutlined,
@@ -9,6 +10,12 @@ import {
 const { Meta } = Card;
 
 const CountryCard = ({ country }) => {
+  const history = useHistory();
+
+  const redirectHandler = (countryName) => {
+    history.push(`/country/${countryName}`);
+  };
+
   return (
     <Card
       style={{ width: '300px', height: 'auto' }}
@@ -51,7 +58,10 @@ const CountryCard = ({ country }) => {
       </div>
 
       <div className='bottom-row'>
-        <button className='see-more-btn' value='See More Details'>
+        <button
+          className='see-more-btn'
+          value='See More Details'
+          onClick={() => redirectHandler(country.name)}>
           See More Details
         </button>
       </div>
