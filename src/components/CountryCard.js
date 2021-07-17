@@ -1,11 +1,6 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import { Card, Avatar } from 'antd';
-import {
-  EditOutlined,
-  EllipsisOutlined,
-  SettingOutlined,
-} from '@ant-design/icons';
+import { useHistory } from 'react-router-dom';
+import { Card } from 'antd';
 
 const { Meta } = Card;
 
@@ -14,6 +9,11 @@ const CountryCard = ({ country }) => {
 
   const redirectHandler = (countryName) => {
     history.push(`/country/${countryName}`);
+    // <Redirect
+    //   to={{
+    //     pathname: `/`,
+    //   }}
+    // />;
   };
 
   return (

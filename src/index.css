@@ -116,3 +116,10 @@ code {
   color: black;
   border: 2px solid black;
 }
+
+.basic-col {
+  background-color: red;
+}
+.additional-col {
+  background-color: aqua;
+}
