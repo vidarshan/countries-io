@@ -123,3 +123,8 @@ code {
 .additional-col {
   background-color: aqua;
 }
+
+.row-col {
+  background-color: yellow;
+  width: 100%;
+}
