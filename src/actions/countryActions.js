@@ -38,7 +38,7 @@ export const getCountry = (countryName) => async (dispatch) => {
     });
 
     const { data } = await axios.get(
-      `https://restcountries.eu/rest/v2/name/${countryName}`
+      `https://restcountries.eu/rest/v2/name/${countryName}?fullText=true`
     );
 
     dispatch({
