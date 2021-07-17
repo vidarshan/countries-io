@@ -354,3 +354,7 @@ code {
   margin: 0.2rem;
   width: auto;
 }
+
+#mapid {
+  height: 180px;
+}

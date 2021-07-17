@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+
+import { Map, TileLayer } from 'react-leaflet';
 import { Row, Col } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCountry } from '../actions/countryActions';
 import map from 'lodash.map';
+import { Marker } from 'leaflet';
+import { Popup } from 'leaflet';
 
 const CountryScreen = ({ match, props }) => {
   const dispatch = useDispatch();
@@ -16,7 +20,7 @@ const CountryScreen = ({ match, props }) => {
     //   setName(item.name);
     // });
   };
-
+  const position = [7, 81];
   useEffect(() => {
     dispatch(getCountry(match.params.name));
     console.log(country);
@@ -130,7 +134,9 @@ const CountryScreen = ({ match, props }) => {
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
                         <div className='population-container'>
                           <div className='title'>Population</div>
-                          <div className='population'>{item.population}</div>
+                          <div className='population'>
+                            {new Intl.NumberFormat().format(item.population)}
+                          </div>
                         </div>
                       </Col>
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
@@ -306,12 +312,25 @@ const CountryScreen = ({ match, props }) => {
                     </div>
                   </Col>
                 </Row>
+                <Row className='row-col'>
+                  <Map
+                    className='map'
+                    center={position}
+                    zoom={3}
+                    style={{ height: 500, width: '100%' }}>
+                    <TileLayer
+                      attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                      url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                    />
+
+                    {/* <Marker position={position}></Marker> */}
+                  </Map>
+                </Row>
               </>
             );
           })}
         </>
       )}
-
       {/* <Col xs={8} xl={8} sm={4} md={4} lg={4}>
   <div className='alt-spellings-container'>
     <div className='alt-spellings-title'>
@@ -338,7 +357,7 @@ const CountryScreen = ({ match, props }) => {
           {console.log(country)}
           <Col className='additional-col'>{country.topLevelDomain}</Col>
         </Row>
-      )} */}
+      )} */}{' '}
     </Row>
   );
 };
