@@ -32,10 +32,9 @@ const AllScreen = () => {
   );
 };
 
-// xs={24}
-// sm={12}
-// md={8}
-// lg={8}
-// xl={6}
-
+{
+  /* <Col className='col-back' xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
+Col
+</Col> */
+}
 export default AllScreen;

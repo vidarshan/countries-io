@@ -92,14 +92,6 @@ code {
 .country-region-title {
   color: #878787;
 }
-.country-phone-code {
-}
-
-.country-capital {
-}
-
-.country-region {
-}
 
 .see-more-btn {
   width: 100%;
@@ -115,4 +107,254 @@ code {
   background-color: white;
   color: black;
   border: 2px solid black;
+}
+
+.basic-col {
+}
+.additional-col {
+}
+
+.row-col {
+  width: 100%;
+}
+
+.country-title {
+  font-size: 2rem;
+}
+
+.country-flag {
+  width: 80%;
+  height: auto;
+}
+
+.additional-col-item {
+}
+
+.additional-row {
+  width: 100%;
+}
+
+.top-level-domain-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+
+  text-align: center;
+}
+
+.alpha-code-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.calling-code-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.capital-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.region-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.sub-region-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.population-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.demonym-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.area-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.gini-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.alt-spellings-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+  text-align: center;
+  height: calc(100% - 0.4rem);
+}
+
+.numeric-code-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.timezones-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  /* align-items: center; */
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+  height: calc(100% - 0.4rem);
+}
+
+.borders-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+  height: calc(100% - 0.4rem);
+}
+
+.currencies-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+  height: calc(100% - 0.4rem);
+}
+
+.languages-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+  height: calc(100% - 0.4rem);
+}
+
+.translations-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+  height: calc(100% - 0.4rem);
+}
+
+.regional-blocks-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+  height: calc(100% - 0.4rem);
+}
+
+.title {
+  color: #878787;
+  font-size: 1rem;
+}
+
+.basic-info-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 1.7rem;
+  margin: 0.2rem;
+  width: auto;
+}
+
+#mapid {
+  height: 180px;
 }
