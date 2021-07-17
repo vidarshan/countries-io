@@ -124,7 +124,7 @@ code {
 
 .country-flag {
   width: 80%;
-  height: 100%;
+  height: auto;
 }
 
 .additional-col-item {
@@ -339,4 +339,18 @@ code {
   padding: 0.2rem;
   text-align: center;
   height: calc(100% - 0.4rem);
+}
+
+.title {
+  color: #878787;
+  font-size: 1rem;
+}
+
+.basic-info-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 1.7rem;
+  margin: 0.2rem;
+  width: auto;
 }

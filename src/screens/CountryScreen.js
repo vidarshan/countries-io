@@ -65,6 +65,7 @@ const CountryScreen = ({ match, props }) => {
                     md={12}
                     lg={12}
                     className='additional-col'>
+                    <Row className='basic-info-title'>Basic Information</Row>
                     <Row className='additional-row'>
                       <Col
                         xs={8}
@@ -74,9 +75,7 @@ const CountryScreen = ({ match, props }) => {
                         lg={4}
                         className='additional-col-item'>
                         <div className='top-level-domain-container'>
-                          <div className='top-level-domain-title'>
-                            Top Level Domain
-                          </div>
+                          <div className='title'>Top Level Domain</div>
                           <div className='top-level-domain'>
                             {map(item.topLevelDomain, (domain) => {
                               return <div>{domain}</div>;
@@ -86,13 +85,13 @@ const CountryScreen = ({ match, props }) => {
                       </Col>
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
                         <div className='alpha-code-container'>
-                          <div className='alpha-code-title'>Alpha 2 code</div>
+                          <div className='title'>Alpha 2 code</div>
                           <div className='alpha-code'>{item.alpha2Code}</div>
                         </div>
                       </Col>
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
                         <div className='alpha-code-container'>
-                          <div className='alpha-code-title'>Alpha 3 code</div>
+                          <div className='title'>Alpha 3 code</div>
                           <div className='alpha-code'>{item.alpha3Code}</div>
                         </div>
                       </Col>
@@ -100,7 +99,7 @@ const CountryScreen = ({ match, props }) => {
                     <Row>
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
                         <div className='calling-code-container'>
-                          <div className='calling-code-title'>Calling code</div>
+                          <div className='title'>Calling code</div>
                           <div className='calling-code'>
                             {map(item.callingCodes, (callingCode) => {
                               return <div>+{callingCode}</div>;
@@ -110,13 +109,13 @@ const CountryScreen = ({ match, props }) => {
                       </Col>
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
                         <div className='capital-container'>
-                          <div className='capital-title'>Capital</div>
+                          <div className='title'>Capital</div>
                           <div className='capital'>{item.capital}</div>
                         </div>
                       </Col>
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
                         <div className='region-container'>
-                          <div className='region-title'>Region</div>
+                          <div className='title'>Region</div>
                           <div className='region'>{item.region}</div>
                         </div>
                       </Col>
@@ -124,19 +123,19 @@ const CountryScreen = ({ match, props }) => {
                     <Row>
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
                         <div className='sub-region-container'>
-                          <div className='sub-region-title'>Sub-region</div>
+                          <div className='title'>Sub-region</div>
                           <div className='sub-region'>{item.subregion}</div>
                         </div>
                       </Col>
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
                         <div className='population-container'>
-                          <div className='population-title'>Population</div>
+                          <div className='title'>Population</div>
                           <div className='population'>{item.population}</div>
                         </div>
                       </Col>
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
                         <div className='demonym-container'>
-                          <div className='demonym-title'>Demonym</div>
+                          <div className='title'>Demonym</div>
                           <div className='demonym'>{item.demonym}</div>
                         </div>
                       </Col>
@@ -146,31 +145,30 @@ const CountryScreen = ({ match, props }) => {
                     <Row>
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
                         <div className='area-container'>
-                          <div className='area-title'>Area</div>
+                          <div className='title'>Area</div>
                           <div className='area'>{item.area}</div>
                         </div>
                       </Col>
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
                         <div className='gini-container'>
-                          <div className='gini-title'>Gini</div>
+                          <div className='title'>Gini</div>
                           <div className='gini'>{item.gini}</div>
                         </div>
                       </Col>
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
                         <div className='numeric-code-container'>
-                          <div className='numeric-code-title'>Numeric Code</div>
+                          <div className='title'>Numeric Code</div>
                           <div className='numeric_code'>{item.numericCode}</div>
                         </div>
                       </Col>
                     </Row>
                   </Col>
                 </Row>
+                <Row className='basic-info-title'>More Information</Row>
                 <Row className='row-col'>
                   <Col xs={8} xl={6} sm={4} md={4} lg={4}>
                     <div className='alt-spellings-container'>
-                      <div className='alt-spellings-title'>
-                        Alternate Spellings
-                      </div>
+                      <div className='title'>Alternate Spellings</div>
                       {map(item.altSpellings, (altSpelling) => {
                         return (
                           <div className='alt-spelling'>{altSpelling}</div>
@@ -180,7 +178,7 @@ const CountryScreen = ({ match, props }) => {
                   </Col>
                   <Col xs={8} xl={6} sm={4} md={4} lg={4}>
                     <div className='timezones-container'>
-                      <div className='timezones-title'>Timezones</div>
+                      <div className='title'>Timezones</div>
                       <div className='timezones'>
                         <Row className='row-col'>
                           {map(item.timezones, (timezone) => {
@@ -196,7 +194,7 @@ const CountryScreen = ({ match, props }) => {
                   </Col>
                   <Col xs={8} xl={6} sm={4} md={4} lg={4}>
                     <div className='borders-container'>
-                      <div className='borders-title'>Borders</div>
+                      <div className='title'>Borders</div>
                       <div className='borders'>
                         <Row className='row-col'>
                           {map(item.borders, (border) => {
@@ -212,7 +210,7 @@ const CountryScreen = ({ match, props }) => {
                   </Col>
                   <Col xs={8} xl={6} sm={4} md={4} lg={4}>
                     <div className='currencies-container'>
-                      <div className='currencies-title'>Currency</div>
+                      <div className='title'>Currency</div>
                       <div className='currency'>
                         {map(item.currencies, (currency) => {
                           return (
@@ -236,22 +234,22 @@ const CountryScreen = ({ match, props }) => {
                 <Row className='row-col'>
                   <Col xs={8} xl={6} sm={4} md={4} lg={4}>
                     <div className='languages-container'>
-                      <div className='languages-title'>Languages</div>
+                      <div className='title'>Languages</div>
                       <div className='languages'>
                         <Row className='row-col'>
                           {map(item.languages, (language) => {
                             return (
                               <>
-                                <Col xs={6} xl={6} sm={6} md={6} lg={6}>
+                                <Col xs={4} xl={4} sm={4} md={4} lg={4}>
                                   {language.iso639_1}
                                 </Col>
-                                <Col xs={6} xl={6} sm={6} md={6} lg={6}>
+                                <Col xs={4} xl={4} sm={4} md={4} lg={4}>
                                   {language.iso639_2}
                                 </Col>
-                                <Col xs={6} xl={6} sm={6} md={6} lg={6}>
+                                <Col xs={8} xl={8} sm={8} md={8} lg={8}>
                                   {language.name}
                                 </Col>
-                                <Col xs={6} xl={6} sm={6} md={6} lg={6}>
+                                <Col xs={8} xl={8} sm={8} md={8} lg={8}>
                                   {language.nativeName}
                                 </Col>
                               </>
@@ -263,7 +261,7 @@ const CountryScreen = ({ match, props }) => {
                   </Col>
                   <Col xs={8} xl={6} sm={4} md={4} lg={4}>
                     <div className='translations-container'>
-                      <div className='translations-title'>Translations</div>
+                      <div className='title'>Translations</div>
                       <div className='translations'>
                         <Row className='row-col'>
                           {map(Object.entries(item.translations), (key) => {
@@ -288,9 +286,7 @@ const CountryScreen = ({ match, props }) => {
                   </Col>
                   <Col xs={8} xl={6} sm={4} md={4} lg={4}>
                     <div className='regional-blocks-container'>
-                      <div className='regional-blocks-title'>
-                        Regional blocks
-                      </div>
+                      <div className='title'>Regional blocks</div>
                       <div className='regional-blocks'>
                         {map(item.regionalBlocs, (block) => {
                           return (
