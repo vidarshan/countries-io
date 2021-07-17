@@ -266,15 +266,13 @@ const CountryScreen = ({ match, props }) => {
                       <div className='translations-title'>Translations</div>
                       <div className='translations'>
                         <Row className='row-col'>
-                          <Col xs={24} xl={24} sm={24} md={24} lg={24}>
-                            {map(Object.entries(item.translations), (key) => {
-                              return (
-                                <>
-                                  <div>{key}</div>
-                                </>
-                              );
-                            })}
-                          </Col>
+                          {map(Object.entries(item.translations), (key) => {
+                            return (
+                              <Col xs={12} xl={12} sm={12} md={12} lg={12}>
+                                <div>{key}</div>
+                              </Col>
+                            );
+                          })}
                           {/* <Col xs={12} xl={12} sm={12} md={12} lg={12}>
                             {map(Object.values(item.translations), (values) => {
                               return (
