@@ -254,6 +254,7 @@ code {
   margin: 0.2rem;
   padding: 0.2rem;
   text-align: center;
+  text-align: center;
 }
 
 .numeric-code-container {
@@ -276,6 +277,7 @@ code {
   margin: 0.2rem;
   padding: 0.2rem;
   text-align: center;
+  height: calc(100% - 0.4rem);
 }
 
 .borders-container {
@@ -287,6 +289,7 @@ code {
   margin: 0.2rem;
   padding: 0.2rem;
   text-align: center;
+  height: calc(100% - 0.4rem);
 }
 
 .currencies-container {
@@ -298,6 +301,7 @@ code {
   margin: 0.2rem;
   padding: 0.2rem;
   text-align: center;
+  height: calc(100% - 0.4rem);
 }
 
 .languages-container {
@@ -309,6 +313,7 @@ code {
   margin: 0.2rem;
   padding: 0.2rem;
   text-align: center;
+  height: calc(100% - 0.4rem);
 }
 
 .translations-container {
@@ -320,6 +325,7 @@ code {
   margin: 0.2rem;
   padding: 0.2rem;
   text-align: center;
+  height: calc(100% - 0.4rem);
 }
 
 .regional-blocks-container {
@@ -331,4 +337,5 @@ code {
   margin: 0.2rem;
   padding: 0.2rem;
   text-align: center;
+  height: calc(100% - 0.4rem);
 }

@@ -296,14 +296,16 @@ const CountryScreen = ({ match, props }) => {
                       <div className='regional-blocks'>
                         {map(item.regionalBlocs, (block) => {
                           return (
-                            <>
-                              <p>{block.acronym}</p>
-                              <p>{block.name}</p>
-                              <p>{block.otherAcronyms}</p>
+                            <Row className='row-col'>
+                              <Row className='row-col'>{block.acronym}</Row>
+                              <Row className='row-col'>{block.name}</Row>
+                              <Row>{block.otherAcronyms}</Row>
                               {map(block.otherNames, (otherName) => {
-                                return <p>{otherName}</p>;
+                                return (
+                                  <Row className='row-col'>{otherName}</Row>
+                                );
                               })}
-                            </>
+                            </Row>
                           );
                         })}
                       </div>
