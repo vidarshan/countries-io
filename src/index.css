@@ -92,14 +92,6 @@ code {
 .country-region-title {
   color: #878787;
 }
-.country-phone-code {
-}
-
-.country-capital {
-}
-
-.country-region {
-}
 
 .see-more-btn {
   width: 100%;
@@ -118,13 +110,159 @@ code {
 }
 
 .basic-col {
-  background-color: red;
 }
 .additional-col {
-  background-color: aqua;
 }
 
 .row-col {
-  background-color: yellow;
   width: 100%;
+}
+
+.country-title {
+  font-size: 2rem;
+}
+
+.country-flag {
+  width: 80%;
+  height: 100%;
+}
+
+.additional-col-item {
+}
+
+.additional-row {
+  width: 100%;
+}
+
+.top-level-domain-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+
+  text-align: center;
+}
+
+.alpha-code-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.calling-code-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.capital-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.region-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.sub-region-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.population-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.demonym-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.area-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.gini-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.alt-spellings-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.numeric-code-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
 }
