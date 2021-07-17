@@ -266,3 +266,69 @@ code {
   padding: 0.2rem;
   text-align: center;
 }
+
+.timezones-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  /* align-items: center; */
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.borders-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.currencies-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.languages-container {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.translations-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}
+
+.regional-blocks-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+  text-align: center;
+}

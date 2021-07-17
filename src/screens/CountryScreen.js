@@ -165,8 +165,151 @@ const CountryScreen = ({ match, props }) => {
                     </Row>
                   </Col>
                 </Row>
-
-                {/* lat,lng */}
+                <Row className='row-col'>
+                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                    <div className='alt-spellings-container'>
+                      <div className='alt-spellings-title'>
+                        Alternate Spellings
+                      </div>
+                      {map(item.altSpellings, (altSpelling) => {
+                        return (
+                          <div className='alt-spelling'>{altSpelling}</div>
+                        );
+                      })}
+                    </div>
+                  </Col>
+                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                    <div className='timezones-container'>
+                      <div className='timezones-title'>Timezones</div>
+                      <div className='timezones'>
+                        <Row className='row-col'>
+                          {map(item.timezones, (timezone) => {
+                            return (
+                              <Col xs={8} xl={8} sm={8} md={8} lg={8}>
+                                {timezone}
+                              </Col>
+                            );
+                          })}
+                        </Row>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                    <div className='borders-container'>
+                      <div className='borders-title'>Borders</div>
+                      <div className='borders'>
+                        <Row className='row-col'>
+                          {map(item.borders, (border) => {
+                            return (
+                              <Col xs={8} xl={8} sm={8} md={8} lg={8}>
+                                {border}
+                              </Col>
+                            );
+                          })}
+                        </Row>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                    <div className='currencies-container'>
+                      <div className='currencies-title'>Currency</div>
+                      <div className='currency'>
+                        {map(item.currencies, (currency) => {
+                          return (
+                            <Row className='row-col'>
+                              <Col xs={6} xl={6} sm={8} md={8} lg={8}>
+                                {currency.code}
+                              </Col>
+                              <Col xs={8} xl={12} sm={8} md={8} lg={8}>
+                                {currency.name}
+                              </Col>
+                              <Col xs={6} xl={6} sm={8} md={8} lg={8}>
+                                {currency.symbol}
+                              </Col>
+                            </Row>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+                <Row className='row-col'>
+                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                    <div className='languages-container'>
+                      <div className='languages-title'>Languages</div>
+                      <div className='languages'>
+                        <Row className='row-col'>
+                          {map(item.languages, (language) => {
+                            return (
+                              <>
+                                <Col xs={6} xl={6} sm={6} md={6} lg={6}>
+                                  {language.iso639_1}
+                                </Col>
+                                <Col xs={6} xl={6} sm={6} md={6} lg={6}>
+                                  {language.iso639_2}
+                                </Col>
+                                <Col xs={6} xl={6} sm={6} md={6} lg={6}>
+                                  {language.name}
+                                </Col>
+                                <Col xs={6} xl={6} sm={6} md={6} lg={6}>
+                                  {language.nativeName}
+                                </Col>
+                              </>
+                            );
+                          })}
+                        </Row>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                    <div className='translations-container'>
+                      <div className='translations-title'>Translations</div>
+                      <div className='translations'>
+                        <Row className='row-col'>
+                          <Col xs={24} xl={24} sm={24} md={24} lg={24}>
+                            {map(Object.entries(item.translations), (key) => {
+                              return (
+                                <>
+                                  <div>{key}</div>
+                                </>
+                              );
+                            })}
+                          </Col>
+                          {/* <Col xs={12} xl={12} sm={12} md={12} lg={12}>
+                            {map(Object.values(item.translations), (values) => {
+                              return (
+                                <>
+                                  <div>{values}</div>
+                                </>
+                              );
+                            })}
+                          </Col> */}
+                        </Row>
+                      </div>
+                    </div>
+                  </Col>
+                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                    <div className='regional-blocks-container'>
+                      <div className='regional-blocks-title'>
+                        Regional blocks
+                      </div>
+                      <div className='regional-blocks'>
+                        {map(item.regionalBlocs, (block) => {
+                          return (
+                            <>
+                              <p>{block.acronym}</p>
+                              <p>{block.name}</p>
+                              <p>{block.otherAcronyms}</p>
+                              {map(block.otherNames, (otherName) => {
+                                return <p>{otherName}</p>;
+                              })}
+                            </>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
               </>
             );
           })}
