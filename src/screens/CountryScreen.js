@@ -320,8 +320,12 @@ const CountryScreen = ({ match, props }) => {
                       noWrap={true}
                     />
 
-                    <Marker position={[item.latlng[0], item.latlng[1]]}>
-                      <Tooltip permanent>Click to see more details</Tooltip>
+                    <Marker
+                      riseOnHover={true}
+                      position={[item.latlng[0], item.latlng[1]]}>
+                      <Tooltip className='map-tooltip' permanent>
+                        Click to see more details
+                      </Tooltip>
                       <Popup
                         maxWidth='max-content'
                         position={[item.latlng[0], item.latlng[1]]}>
