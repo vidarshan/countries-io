@@ -357,4 +357,39 @@ code {
 
 #mapid {
   height: 180px;
+  width: 100%;
+}
+
+.map-tooltip {
+  font-family: 'inter', sans-serif;
+}
+
+.pop-up {
+  font-family: 'inter', sans-serif;
+}
+
+.pop-up-title {
+  font-size: 1rem;
+  font-weight: 600;
+  border-bottom: 2px solid black;
+  margin: 0.2rem 0;
+}
+
+.pop-up-population-title {
+  text-align: center;
+}
+
+.pop-up-population {
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 1px solid black;
+}
+
+.pop-up-area-title {
+  text-align: center;
+}
+
+.pop-up-area {
+  text-align: center;
+  font-weight: 600;
 }

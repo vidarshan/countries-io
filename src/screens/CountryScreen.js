@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import { Map, TileLayer } from 'react-leaflet';
+import { Map, Marker, Popup, TileLayer, Tooltip } from 'react-leaflet';
 import { Row, Col } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCountry } from '../actions/countryActions';
 import map from 'lodash.map';
-import { Marker } from 'leaflet';
-import { Popup } from 'leaflet';
-
 const CountryScreen = ({ match, props }) => {
   const dispatch = useDispatch();
 
@@ -20,7 +17,7 @@ const CountryScreen = ({ match, props }) => {
     //   setName(item.name);
     // });
   };
-  const position = [7, 81];
+  //const position = [7, 81];
   useEffect(() => {
     dispatch(getCountry(match.params.name));
     console.log(country);
@@ -152,7 +149,7 @@ const CountryScreen = ({ match, props }) => {
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
                         <div className='area-container'>
                           <div className='title'>Area</div>
-                          <div className='area'>{item.area}</div>
+                          {new Intl.NumberFormat().format(item.area)}
                         </div>
                       </Col>
                       <Col xs={8} xl={8} sm={4} md={4} lg={4}>
@@ -315,15 +312,39 @@ const CountryScreen = ({ match, props }) => {
                 <Row className='row-col'>
                   <Map
                     className='map'
-                    center={position}
+                    center={[item.latlng[0], item.latlng[1]]}
                     zoom={3}
                     style={{ height: 500, width: '100%' }}>
                     <TileLayer
-                      attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                       url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+                      noWrap={true}
                     />
 
-                    {/* <Marker position={position}></Marker> */}
+                    <Marker
+                      riseOnHover={true}
+                      position={[item.latlng[0], item.latlng[1]]}>
+                      <Tooltip className='map-tooltip' permanent>
+                        Click to see more details
+                      </Tooltip>
+                      <Popup
+                        maxWidth='max-content'
+                        position={[item.latlng[0], item.latlng[1]]}>
+                        <div className='pop-up'>
+                          <div className='pop-up-title'>{item.name}</div>
+                          <div className='pop-up-population-title'>
+                            Population
+                          </div>
+                          <div className='pop-up-population'>
+                            {new Intl.NumberFormat().format(item.population)}
+                          </div>
+                          <div className='pop-up-area-title'>Area</div>
+
+                          <div className='pop-up-area'>
+                            {new Intl.NumberFormat().format(item.area)}
+                          </div>
+                        </div>
+                      </Popup>
+                    </Marker>
                   </Map>
                 </Row>
               </>
