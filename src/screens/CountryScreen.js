@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import { Map, TileLayer } from 'react-leaflet';
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import { Row, Col } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCountry } from '../actions/countryActions';
 import map from 'lodash.map';
-import { Marker } from 'leaflet';
-import { Popup } from 'leaflet';
-
 const CountryScreen = ({ match, props }) => {
   const dispatch = useDispatch();
 
@@ -315,15 +312,15 @@ const CountryScreen = ({ match, props }) => {
                 <Row className='row-col'>
                   <Map
                     className='map'
-                    center={position}
-                    zoom={3}
+                    center={[item.latlng[0], item.latlng[1]]}
+                    zoom={5}
                     style={{ height: 500, width: '100%' }}>
-                    <TileLayer
-                      attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                      url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-                    />
+                    <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
 
-                    {/* <Marker position={position}></Marker> */}
+                    <Marker position={position}></Marker>
+                    <Popup position={position}>
+                      <p>this is the country</p>
+                    </Popup>
                   </Map>
                 </Row>
               </>
