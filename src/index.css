@@ -109,11 +109,6 @@ code {
   border: 2px solid black;
 }
 
-.basic-col {
-}
-.additional-col {
-}
-
 .row-col {
   width: 100%;
 }
@@ -125,9 +120,6 @@ code {
 .country-flag {
   width: 80%;
   height: auto;
-}
-
-.additional-col-item {
 }
 
 .additional-row {
@@ -270,10 +262,6 @@ code {
 }
 
 .timezones-container {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center; */
-  /* align-items: center; */
   border: 2px solid black;
   margin: 0.2rem;
   padding: 0.2rem;
@@ -282,10 +270,6 @@ code {
 }
 
 .borders-container {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   border: 2px solid black;
   margin: 0.2rem;
   padding: 0.2rem;
@@ -294,10 +278,6 @@ code {
 }
 
 .currencies-container {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   border: 2px solid black;
   margin: 0.2rem;
   padding: 0.2rem;
@@ -306,10 +286,6 @@ code {
 }
 
 .languages-container {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   border: 2px solid black;
   margin: 0.2rem;
   padding: 0.2rem;
@@ -318,10 +294,6 @@ code {
 }
 
 .translations-container {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   border: 2px solid black;
   margin: 0.2rem;
   padding: 0.2rem;
