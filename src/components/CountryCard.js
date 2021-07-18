@@ -2,18 +2,11 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Card } from 'antd';
 
-const { Meta } = Card;
-
 const CountryCard = ({ country }) => {
   const history = useHistory();
 
   const redirectHandler = (countryName) => {
     history.push(`/country/${countryName}`);
-    // <Redirect
-    //   to={{
-    //     pathname: `/`,
-    //   }}
-    // />;
   };
 
   return (
@@ -65,7 +58,6 @@ const CountryCard = ({ country }) => {
           See More Details
         </button>
       </div>
-      {/* <div className='country-language'>{country.languages[0]}</div> */}
     </Card>
   );
 };

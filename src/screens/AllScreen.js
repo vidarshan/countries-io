@@ -1,12 +1,9 @@
 import React, { useEffect } from 'react';
-import { Row, Col, Divider } from 'antd';
+import { Row, Col } from 'antd';
 import CountryCard from '../components/CountryCard';
 import { useDispatch, useSelector } from 'react-redux';
 import map from 'lodash.map';
 import { getAllCountries } from '../actions/countryActions';
-import Layout from 'antd/lib/layout/layout';
-
-const style = { background: '#0092ff', padding: '8px 0' };
 
 const AllScreen = () => {
   const dispatch = useDispatch();
@@ -16,14 +13,14 @@ const AllScreen = () => {
 
   useEffect(() => {
     dispatch(getAllCountries());
-    console.log(allcountries);
-  }, []);
+    // eslint-disable-next-line
+  }, [dispatch]);
 
   return (
     <Row className='margin-extra'>
-      {map(countries, (country) => {
+      {map(countries, (country, key) => {
         return (
-          <Col>
+          <Col key={key}>
             <CountryCard country={country}></CountryCard>
           </Col>
         );
@@ -32,9 +29,4 @@ const AllScreen = () => {
   );
 };
 
-{
-  /* <Col className='col-back' xs={{ span: 5, offset: 1 }} lg={{ span: 6, offset: 2 }}>
-Col
-</Col> */
-}
 export default AllScreen;
