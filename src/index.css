@@ -25,15 +25,97 @@ code {
 
 .margin-extra {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 100px;
   margin-left: 5rem;
   margin-right: 5rem;
 }
 
+@media only screen and (min-width: 1599px) {
+  .margin-extra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+
+  .country-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 1199px) {
+  .margin-extra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .country-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .margin-extra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .country-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .margin-extra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .country-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .margin-extra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .country-col {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .gutter-row {
   display: flex;
   flex-direction: row;
+
   justify-content: center;
 }
 

@@ -17,10 +17,17 @@ const AllScreen = () => {
   }, [dispatch]);
 
   return (
-    <Row className='margin-extra'>
+    <Row gutter={[20, 20]} className='margin-extra'>
       {map(countries, (country, key) => {
         return (
-          <Col key={key}>
+          <Col
+            className='country-col'
+            xs={24}
+            sm={12}
+            md={8}
+            lg={8}
+            xl={6}
+            key={key}>
             <CountryCard country={country}></CountryCard>
           </Col>
         );
