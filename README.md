@@ -1,6 +1,6 @@
 # Introduction
 
-- This project serves the purpose of providing advanced data on a specific country declared legally.
+- This project serves the purpose of providing basic to advanced data on a specific country declared legally.
 - Currently, this application can fetech and provide details on over 250 countries.
 - This project was generated with `create-react-app`.
 - The design is based on Ant Design.
@@ -20,4 +20,4 @@
 # Notes
 
 - All the credit for providing the data for this application is dedicated to the relevant providers.
-- If there is a use case for personal or commercial use, please contact the creator through the email vidarshanadithya3@gmail.com.
+- If there is a use case for personal or commercial use, please contact the creator through the email vidarshanadithya3@gmail.com 📧.
