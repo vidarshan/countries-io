@@ -29,10 +29,10 @@ const CountryScreen = ({ match }) => {
                 <Row className='row-col'>
                   <Col
                     xs={24}
-                    xl={24}
-                    sm={12}
-                    md={12}
-                    lg={12}
+                    xl={12}
+                    sm={24}
+                    md={24}
+                    lg={24}
                     className='basic-col'>
                     <div className='country-title'>{item.name}</div>
                   </Col>
@@ -41,9 +41,9 @@ const CountryScreen = ({ match }) => {
                   <Col
                     xs={24}
                     xl={12}
-                    sm={12}
-                    md={12}
-                    lg={12}
+                    sm={24}
+                    md={24}
+                    lg={24}
                     className='basic-col'>
                     <img
                       className='country-flag'
@@ -54,19 +54,13 @@ const CountryScreen = ({ match }) => {
                   <Col
                     xs={24}
                     xl={12}
-                    sm={12}
-                    md={12}
-                    lg={12}
+                    sm={24}
+                    md={24}
+                    lg={24}
                     className='additional-col'>
                     <Row className='basic-info-title'>Basic Information</Row>
                     <Row className='additional-row'>
-                      <Col
-                        xs={8}
-                        xl={8}
-                        sm={4}
-                        md={4}
-                        lg={4}
-                        className='additional-col-item'>
+                      <Col xs={12} xl={8} sm={8} md={8} lg={8}>
                         <div className='top-level-domain-container'>
                           <div className='title'>Top Level Domain</div>
                           <div className='top-level-domain'>
@@ -76,13 +70,13 @@ const CountryScreen = ({ match }) => {
                           </div>
                         </div>
                       </Col>
-                      <Col xs={8} xl={8} sm={4} md={4} lg={4}>
+                      <Col xs={12} xl={8} sm={8} md={8} lg={8}>
                         <div className='alpha-code-container'>
                           <div className='title'>Alpha 2 code</div>
                           <div className='alpha-code'>{item.alpha2Code}</div>
                         </div>
                       </Col>
-                      <Col xs={8} xl={8} sm={4} md={4} lg={4}>
+                      <Col xs={24} xl={8} sm={8} md={8} lg={8}>
                         <div className='alpha-code-container'>
                           <div className='title'>Alpha 3 code</div>
                           <div className='alpha-code'>{item.alpha3Code}</div>
@@ -90,7 +84,7 @@ const CountryScreen = ({ match }) => {
                       </Col>
                     </Row>
                     <Row>
-                      <Col xs={8} xl={8} sm={4} md={4} lg={4}>
+                      <Col xs={8} xl={8} sm={8} md={8} lg={8}>
                         <div className='calling-code-container'>
                           <div className='title'>Calling code</div>
                           <div className='calling-code'>
@@ -100,13 +94,13 @@ const CountryScreen = ({ match }) => {
                           </div>
                         </div>
                       </Col>
-                      <Col xs={8} xl={8} sm={4} md={4} lg={4}>
+                      <Col xs={8} xl={8} sm={8} md={8} lg={8}>
                         <div className='capital-container'>
                           <div className='title'>Capital</div>
                           <div className='capital'>{item.capital}</div>
                         </div>
                       </Col>
-                      <Col xs={8} xl={8} sm={4} md={4} lg={4}>
+                      <Col xs={8} xl={8} sm={8} md={8} lg={8}>
                         <div className='region-container'>
                           <div className='title'>Region</div>
                           <div className='region'>{item.region}</div>
@@ -114,13 +108,13 @@ const CountryScreen = ({ match }) => {
                       </Col>
                     </Row>
                     <Row>
-                      <Col xs={8} xl={8} sm={4} md={4} lg={4}>
+                      <Col xs={12} xl={8} sm={8} md={8} lg={8}>
                         <div className='sub-region-container'>
                           <div className='title'>Sub-region</div>
                           <div className='sub-region'>{item.subregion}</div>
                         </div>
                       </Col>
-                      <Col xs={8} xl={8} sm={4} md={4} lg={4}>
+                      <Col xs={12} xl={8} sm={8} md={8} lg={8}>
                         <div className='population-container'>
                           <div className='title'>Population</div>
                           <div className='population'>
@@ -128,7 +122,7 @@ const CountryScreen = ({ match }) => {
                           </div>
                         </div>
                       </Col>
-                      <Col xs={8} xl={8} sm={4} md={4} lg={4}>
+                      <Col xs={24} xl={8} sm={8} md={8} lg={8}>
                         <div className='demonym-container'>
                           <div className='title'>Demonym</div>
                           <div className='demonym'>{item.demonym}</div>
@@ -138,19 +132,19 @@ const CountryScreen = ({ match }) => {
 
                     {/* lat, long */}
                     <Row>
-                      <Col xs={8} xl={8} sm={4} md={4} lg={4}>
+                      <Col xs={12} xl={8} sm={8} md={8} lg={8}>
                         <div className='area-container'>
                           <div className='title'>Area</div>
                           {new Intl.NumberFormat().format(item.area)}
                         </div>
                       </Col>
-                      <Col xs={8} xl={8} sm={4} md={4} lg={4}>
+                      <Col xs={12} xl={8} sm={8} md={8} lg={8}>
                         <div className='gini-container'>
                           <div className='title'>Gini</div>
                           <div className='gini'>{item.gini}</div>
                         </div>
                       </Col>
-                      <Col xs={8} xl={8} sm={4} md={4} lg={4}>
+                      <Col xs={24} xl={8} sm={8} md={8} lg={8}>
                         <div className='numeric-code-container'>
                           <div className='title'>Numeric Code</div>
                           <div className='numeric_code'>{item.numericCode}</div>
@@ -159,9 +153,9 @@ const CountryScreen = ({ match }) => {
                     </Row>
                   </Col>
                 </Row>
-                <Row className='basic-info-title'>More Information</Row>
+                <Row className='more-info-title'>More Information</Row>
                 <Row className='row-col'>
-                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                  <Col xs={24} xl={6} sm={24} md={24} lg={12}>
                     <div className='alt-spellings-container'>
                       <div className='title'>Alternate Spellings</div>
                       {map(item.altSpellings, (altSpelling, key) => {
@@ -173,7 +167,7 @@ const CountryScreen = ({ match }) => {
                       })}
                     </div>
                   </Col>
-                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                  <Col xs={24} xl={6} sm={24} md={24} lg={12}>
                     <div className='timezones-container'>
                       <div className='title'>Timezones</div>
                       <div className='timezones'>
@@ -189,7 +183,7 @@ const CountryScreen = ({ match }) => {
                       </div>
                     </div>
                   </Col>
-                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                  <Col xs={24} xl={6} sm={24} md={24} lg={12}>
                     <div className='borders-container'>
                       <div className='title'>Borders</div>
                       <div className='borders'>
@@ -211,7 +205,7 @@ const CountryScreen = ({ match }) => {
                       </div>
                     </div>
                   </Col>
-                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                  <Col xs={24} xl={6} sm={24} md={24} lg={12}>
                     <div className='currencies-container'>
                       <div className='title'>Currency</div>
                       <div className='currency'>
@@ -235,7 +229,7 @@ const CountryScreen = ({ match }) => {
                   </Col>
                 </Row>
                 <Row className='row-col'>
-                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                  <Col xs={24} xl={8} sm={24} md={24} lg={12}>
                     <div className='languages-container'>
                       <div className='title'>Languages</div>
                       <div className='languages'>
@@ -262,7 +256,7 @@ const CountryScreen = ({ match }) => {
                       </div>
                     </div>
                   </Col>
-                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                  <Col xs={24} xl={8} sm={24} md={24} lg={12}>
                     <div className='translations-container'>
                       <div className='title'>Translations</div>
                       <div className='translations'>
@@ -284,7 +278,7 @@ const CountryScreen = ({ match }) => {
                       </div>
                     </div>
                   </Col>
-                  <Col xs={8} xl={6} sm={4} md={4} lg={4}>
+                  <Col xs={24} xl={8} sm={24} md={24} lg={24}>
                     <div className='regional-blocks-container'>
                       <div className='title'>Regional blocks</div>
                       <div className='regional-blocks'>
@@ -308,6 +302,7 @@ const CountryScreen = ({ match }) => {
                     </div>
                   </Col>
                 </Row>
+                <Row className='basic-info-title'>Geographical Location</Row>
                 <Row className='row-col'>
                   <Map
                     className='map'
