@@ -1,7 +1,11 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { getAllReducer, getCountryReducer } from './reducers/countryReducers';
+import {
+  getAllReducer,
+  searchCountryReducer,
+  getCountryReducer,
+} from './reducers/countryReducers';
 
 const initialState = {
   countries: [],
@@ -9,6 +13,7 @@ const initialState = {
 
 const reducer = combineReducers({
   getAll: getAllReducer,
+  searchCountry: searchCountryReducer,
   getCountry: getCountryReducer,
 });
 const middleware = [thunk];

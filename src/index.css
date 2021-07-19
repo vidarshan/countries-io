@@ -500,3 +500,28 @@ code {
   text-align: center;
   font-weight: 600;
 }
+
+.home-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh !important;
+  width: 100vw !important;
+}
+
+.countries-main-title {
+  font-size: 5rem;
+}
+
+.countries-main-input {
+  width: 85%;
+}
+
+.countries-search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: red;
+  width: 40%;
+}
