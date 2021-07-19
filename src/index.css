@@ -522,6 +522,10 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: red;
+  width: 40%;
+}
+
+.search-error-container {
+  margin: 0.5rem;
   width: 40%;
 }
