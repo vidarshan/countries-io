@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Input, Select } from 'antd';
-import { useDispatch, useSelector } from 'react-redux';
-import { searchCountries } from '../actions/countryActions';
+import { useHistory } from 'react-router-dom';
 import Message from '../components/Message';
 
 const { Search } = Input;
@@ -9,15 +8,16 @@ const { Search } = Input;
 const { Option } = Select;
 
 const HomeScreen = () => {
-  const dispatch = useDispatch();
+  const history = useHistory();
+
   const [criteria, setCriteria] = useState('name');
+  const [keyword, setKeyword] = useState();
+  const [disabled, setDisabled] = useState(false);
+  const [message, setMessage] = useState();
+  const [showMessage, setShowMessage] = useState(false);
   const [placeholder, setPlaceholder] = useState(
     'example : united states of America'
   );
-
-  const searchResult = useSelector((state) => state.searchCountry);
-
-  const { loading, error, searchCountry: results } = searchResult;
 
   function handleChange(value) {
     setCriteria(value);
@@ -46,30 +46,16 @@ const HomeScreen = () => {
   }
 
   function searchCountry(criteria, keyword) {
-    switch (criteria) {
-      case 'name':
-        dispatch(searchCountries('name', keyword));
-        break;
-      case 'currency':
-        dispatch(searchCountries('currency', keyword));
-        break;
-      case 'language':
-        dispatch(searchCountries('language', keyword));
-        break;
-      case 'capitalcity':
-        dispatch(searchCountries('capitalcity', keyword));
-        break;
-      case 'callingcode':
-        dispatch(searchCountries('callingcode', keyword));
-        break;
-      case 'region':
-        dispatch(searchCountries('region', keyword));
-        break;
-      default:
-        break;
+    setShowMessage(false);
+
+    if (keyword) {
+      history.push(`/search/${criteria}/${keyword}`);
+    } else {
+      setShowMessage(true);
+      setMessage('Please enter your search keyword');
     }
 
-    console.log(error);
+    console.log(showMessage);
   }
 
   return (
@@ -80,11 +66,9 @@ const HomeScreen = () => {
         or region
       </div>
 
-      {error && (
-        <div className='search-error-container'>
-          <Message type='error' message={error}></Message>
-        </div>
-      )}
+      <div className='empty-search-message-container'>
+        {showMessage && <Message type='error' message={message}></Message>}
+      </div>
       <div div className='countries-search-container'>
         <div className='countries-search-type'>
           <Select
@@ -102,11 +86,10 @@ const HomeScreen = () => {
         </div>
         <div className='countries-main-input'>
           <Search
-            loading={loading}
             size='large'
             className='countries-input-field'
+            disabled={disabled}
             placeholder={placeholder}
-            allowClear
             onSearch={(event) => searchCountry(criteria, event)}
           />
         </div>
