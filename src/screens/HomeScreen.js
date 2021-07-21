@@ -1,23 +1,26 @@
 import React, { useState } from 'react';
 import { Input, Select } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
-import { searchCountries } from '../actions/countryActions';
 import Message from '../components/Message';
+import { useHistory } from 'react-router-dom';
+import { searchCountries, getAllCountries } from '../actions/countryActions';
 
 const { Search } = Input;
 
 const { Option } = Select;
 
 const HomeScreen = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
+
+  const searchResult = useSelector((state) => state.searchCountry);
+
+  const { loading, error, results } = searchResult;
+
   const [criteria, setCriteria] = useState('name');
   const [placeholder, setPlaceholder] = useState(
     'example : united states of America'
   );
-
-  const searchResult = useSelector((state) => state.searchCountry);
-
-  const { loading, error, searchCountry: results } = searchResult;
 
   function handleChange(value) {
     setCriteria(value);
@@ -46,30 +49,7 @@ const HomeScreen = () => {
   }
 
   function searchCountry(criteria, keyword) {
-    switch (criteria) {
-      case 'name':
-        dispatch(searchCountries('name', keyword));
-        break;
-      case 'currency':
-        dispatch(searchCountries('currency', keyword));
-        break;
-      case 'language':
-        dispatch(searchCountries('language', keyword));
-        break;
-      case 'capitalcity':
-        dispatch(searchCountries('capitalcity', keyword));
-        break;
-      case 'callingcode':
-        dispatch(searchCountries('callingcode', keyword));
-        break;
-      case 'region':
-        dispatch(searchCountries('region', keyword));
-        break;
-      default:
-        break;
-    }
-
-    console.log(error);
+    history.push(`/search/${criteria}/${keyword}`);
   }
 
   return (
@@ -80,11 +60,11 @@ const HomeScreen = () => {
         or region
       </div>
 
-      {error && (
+      {/* {error && (
         <div className='search-error-container'>
           <Message type='error' message={error}></Message>
         </div>
-      )}
+      )} */}
       <div div className='countries-search-container'>
         <div className='countries-search-type'>
           <Select
@@ -102,11 +82,10 @@ const HomeScreen = () => {
         </div>
         <div className='countries-main-input'>
           <Search
-            loading={loading}
+            //loading={loading}
             size='large'
             className='countries-input-field'
             placeholder={placeholder}
-            allowClear
             onSearch={(event) => searchCountry(criteria, event)}
           />
         </div>
