@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Input, Select } from 'antd';
 import { useHistory } from 'react-router-dom';
+import Message from '../components/Message';
 
 const { Search } = Input;
 
@@ -12,6 +13,8 @@ const HomeScreen = () => {
   const [criteria, setCriteria] = useState('name');
   const [keyword, setKeyword] = useState();
   const [disabled, setDisabled] = useState(false);
+  const [message, setMessage] = useState();
+  const [showMessage, setShowMessage] = useState(false);
   const [placeholder, setPlaceholder] = useState(
     'example : united states of America'
   );
@@ -43,13 +46,16 @@ const HomeScreen = () => {
   }
 
   function searchCountry(criteria, keyword) {
-    console.log(keyword);
+    setShowMessage(false);
 
     if (keyword) {
       history.push(`/search/${criteria}/${keyword}`);
     } else {
-      console.log('wddwe');
+      setShowMessage(true);
+      setMessage('Please enter your search keyword');
     }
+
+    console.log(showMessage);
   }
 
   return (
@@ -58,6 +64,10 @@ const HomeScreen = () => {
       <div className='countries-sub-title'>
         Search for countries by name, currency, language, capital, calling code
         or region
+      </div>
+
+      <div className='empty-search-message-container'>
+        {showMessage && <Message type='error' message={message}></Message>}
       </div>
       <div div className='countries-search-container'>
         <div className='countries-search-type'>

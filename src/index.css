@@ -545,3 +545,9 @@ code {
 .search-results-container {
   background-color: red;
 }
+
+.empty-search-message-container {
+  margin-top: 0.2rem;
+  margin-bottom: 0.2rem;
+  width: 40%;
+}
