@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col } from 'antd';
 import CountryCard from '../components/CountryCard';
-import { searchCountries, getAllCountries } from '../actions/countryActions';
+import { searchCountries } from '../actions/countryActions';
 import map from 'lodash.map';
 import Message from '../components/Message';
 
-const ResultsListScreen = ({ list, match }) => {
+const ResultsListScreen = ({ match }) => {
   const dispatch = useDispatch();
 
   const searchResult = useSelector((state) => state.searchCountry);
@@ -16,8 +16,6 @@ const ResultsListScreen = ({ list, match }) => {
   const { name, type } = match.params;
 
   useEffect(() => {
-    console.log(match);
-
     dispatch(searchCountries(type, name));
   }, [dispatch, match]);
 
@@ -33,7 +31,6 @@ const ResultsListScreen = ({ list, match }) => {
         </div>
       ) : (
         map(results.data, (item, key) => {
-          console.log(results.data);
           return (
             <Col
               className='country-col'

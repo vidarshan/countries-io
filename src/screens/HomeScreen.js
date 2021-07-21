@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Input, Select } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
-import Message from '../components/Message';
 import { useHistory } from 'react-router-dom';
-import { searchCountries, getAllCountries } from '../actions/countryActions';
 
 const { Search } = Input;
 
@@ -11,11 +9,8 @@ const { Option } = Select;
 
 const HomeScreen = () => {
   const history = useHistory();
-  const dispatch = useDispatch();
 
   const searchResult = useSelector((state) => state.searchCountry);
-
-  const { loading, error, results } = searchResult;
 
   const [criteria, setCriteria] = useState('name');
   const [placeholder, setPlaceholder] = useState(
@@ -59,12 +54,6 @@ const HomeScreen = () => {
         Search for countries by name, currency, language, capital, calling code
         or region
       </div>
-
-      {/* {error && (
-        <div className='search-error-container'>
-          <Message type='error' message={error}></Message>
-        </div>
-      )} */}
       <div div className='countries-search-container'>
         <div className='countries-search-type'>
           <Select
@@ -82,7 +71,6 @@ const HomeScreen = () => {
         </div>
         <div className='countries-main-input'>
           <Search
-            //loading={loading}
             size='large'
             className='countries-input-field'
             placeholder={placeholder}
