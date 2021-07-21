@@ -10,6 +10,8 @@ const HomeScreen = () => {
   const history = useHistory();
 
   const [criteria, setCriteria] = useState('name');
+  const [keyword, setKeyword] = useState();
+  const [disabled, setDisabled] = useState(false);
   const [placeholder, setPlaceholder] = useState(
     'example : united states of America'
   );
@@ -41,7 +43,13 @@ const HomeScreen = () => {
   }
 
   function searchCountry(criteria, keyword) {
-    history.push(`/search/${criteria}/${keyword}`);
+    console.log(keyword);
+
+    if (keyword) {
+      history.push(`/search/${criteria}/${keyword}`);
+    } else {
+      console.log('wddwe');
+    }
   }
 
   return (
@@ -70,6 +78,7 @@ const HomeScreen = () => {
           <Search
             size='large'
             className='countries-input-field'
+            disabled={disabled}
             placeholder={placeholder}
             onSearch={(event) => searchCountry(criteria, event)}
           />

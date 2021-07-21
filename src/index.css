@@ -541,3 +541,7 @@ code {
 .empty-container-text {
   font-size: 18px;
 }
+
+.search-results-container {
+  background-color: red;
+}
