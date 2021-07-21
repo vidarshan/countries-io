@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Input, Select } from 'antd';
-import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 const { Search } = Input;
@@ -9,8 +8,6 @@ const { Option } = Select;
 
 const HomeScreen = () => {
   const history = useHistory();
-
-  const searchResult = useSelector((state) => state.searchCountry);
 
   const [criteria, setCriteria] = useState('name');
   const [placeholder, setPlaceholder] = useState(
