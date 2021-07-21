@@ -1,17 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col } from 'antd';
+import { Row, Col, Spin } from 'antd';
 import CountryCard from '../components/CountryCard';
 import { searchCountries } from '../actions/countryActions';
 import map from 'lodash.map';
 import Message from '../components/Message';
+import EmptyContainer from '../components/EmptyContainer';
 
 const ResultsListScreen = ({ match }) => {
   const dispatch = useDispatch();
 
   const searchResult = useSelector((state) => state.searchCountry);
 
-  const { loading, error, results } = searchResult;
+  const { loading = true, error, results } = searchResult;
 
   const { name, type } = match.params;
 
@@ -22,12 +23,11 @@ const ResultsListScreen = ({ match }) => {
   return (
     <Row gutter={[20, 20]} className='margin-extra'>
       {loading ? (
-        <>loading</>
+        <Spin size='large' />
       ) : error ? (
         <div className='search-error-container'>
-          <Message
-            type='error'
-            message={`No results found for a country with ${name} ${type} `}></Message>
+          <EmptyContainer
+            message={`No results found for a country with ${name} ${type}.`}></EmptyContainer>
         </div>
       ) : (
         map(results.data, (item, key) => {

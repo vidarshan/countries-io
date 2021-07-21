@@ -29,6 +29,7 @@ code {
   margin-top: 100px;
   margin-left: 5rem;
   margin-right: 5rem;
+  min-height: 90vh;
 }
 
 @media only screen and (min-width: 1599px) {
@@ -528,4 +529,15 @@ code {
 .search-error-container {
   margin: 0.5rem;
   width: 40%;
+}
+
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty-container-text {
+  font-size: 18px;
 }
