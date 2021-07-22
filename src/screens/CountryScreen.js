@@ -1,8 +1,9 @@
 import React, { Fragment, useEffect } from 'react';
 
 import { Map, Marker, Popup, TileLayer, Tooltip } from 'react-leaflet';
-import { Row, Col } from 'antd';
+import { Row, Col, Spin } from 'antd';
 import { useSelector, useDispatch } from 'react-redux';
+import Message from '../components/Message';
 import { getCountry } from '../actions/countryActions';
 import map from 'lodash.map';
 const CountryScreen = ({ match }) => {
@@ -10,7 +11,7 @@ const CountryScreen = ({ match }) => {
 
   const countryInfo = useSelector((state) => state.getCountry);
 
-  const { country, loading } = countryInfo;
+  const { country, loading, error } = countryInfo;
 
   useEffect(() => {
     dispatch(getCountry(match.params.name));
@@ -20,7 +21,11 @@ const CountryScreen = ({ match }) => {
   return (
     <Row className='margin-extra'>
       {loading ? (
-        <div>loading</div>
+        <Spin size='large'></Spin>
+      ) : error ? (
+        <div className='search-error-container'>
+          <Message message={error} type='error'></Message>
+        </div>
       ) : (
         <>
           {map(country, (item, key) => {
@@ -306,7 +311,10 @@ const CountryScreen = ({ match }) => {
                 <Row className='row-col'>
                   <Map
                     className='map'
-                    center={[item.latlng[0], item.latlng[1]]}
+                    center={[
+                      item.latlng ? item.latlng[0] : 0,
+                      item.latlng ? item.latlng[1] : 0,
+                    ]}
                     zoom={3}
                     style={{ height: 500, width: '100%' }}>
                     <TileLayer
@@ -317,7 +325,10 @@ const CountryScreen = ({ match }) => {
                     <Marker
                       key={item.name}
                       riseOnHover={true}
-                      position={[item.latlng[0], item.latlng[1]]}>
+                      position={[
+                        item.latlng ? item.latlng[0] : 0,
+                        item.latlng ? item.latlng[1] : 0,
+                      ]}>
                       <Tooltip className='map-tooltip' permanent>
                         Click to see more details
                       </Tooltip>
