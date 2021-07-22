@@ -551,3 +551,29 @@ code {
   margin-bottom: 0.2rem;
   width: 40%;
 }
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.about-image {
+  height: 10rem;
+}
+
+.about-title {
+  margin: 0.4rem 0;
+  font-size: 2rem;
+}
+
+.about-description {
+  margin: 0.4rem 0;
+}
+
+.about-version {
+  font-size: 1rem;
+  margin: 0.4rem 0;
+}
