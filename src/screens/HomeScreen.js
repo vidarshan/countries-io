@@ -76,7 +76,7 @@ const HomeScreen = () => {
         <div className='countries-search-type'>
           <Select
             defaultValue={criteria}
-            style={{ width: 150 }}
+            style={{ width: '100%' }}
             size='large'
             onChange={handleChange}>
             <Option value='name'>Name</Option>

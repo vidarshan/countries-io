@@ -16,7 +16,7 @@ const TopNav = () => {
           width: '100%',
         }}>
         <div className='logo' />
-        <Menu theme='dark' mode='vertical' defaultSelectedKeys={['2']}>
+        <Menu theme='dark' mode='horizontal'>
           <Menu.Item
             key='1'
             style={{ float: 'left' }}
