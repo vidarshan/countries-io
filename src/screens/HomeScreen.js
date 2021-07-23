@@ -23,7 +23,7 @@ const HomeScreen = () => {
     setCriteria(value);
     switch (value) {
       case 'name':
-        setPlaceholder('example : united states of America');
+        setPlaceholder('example : United States of America');
         break;
       case 'currency':
         setPlaceholder('example : USD');
@@ -39,6 +39,9 @@ const HomeScreen = () => {
         break;
       case 'region':
         setPlaceholder('example : Americas');
+        break;
+      case 'regionalbloc':
+        setPlaceholder('example : NAFTA');
         break;
       default:
         break;
@@ -62,8 +65,8 @@ const HomeScreen = () => {
     <div className='home-screen'>
       <div className='countries-main-title'>countries.io</div>
       <div className='countries-sub-title'>
-        Search for countries by name, currency, language, capital, calling code
-        or region
+        Search for countries by name, currency, language, capital, calling code,
+        region or regional bloc
       </div>
 
       <div className='empty-search-message-container'>
@@ -73,7 +76,7 @@ const HomeScreen = () => {
         <div className='countries-search-type'>
           <Select
             defaultValue={criteria}
-            style={{ width: 120 }}
+            style={{ width: 150 }}
             size='large'
             onChange={handleChange}>
             <Option value='name'>Name</Option>
@@ -82,6 +85,7 @@ const HomeScreen = () => {
             <Option value='capitalcity'>Capital City</Option>
             <Option value='callingcode'>Calling Code</Option>
             <Option value='region'>Region</Option>
+            <Option value='regionalbloc'>Regional Bloc</Option>
           </Select>
         </div>
         <div className='countries-main-input'>

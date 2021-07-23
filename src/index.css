@@ -73,16 +73,25 @@ code {
   }
 
   .basic-info-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     display: block !important;
   }
 }
 
 .basic-info-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin-top: 1rem;
   text-align: center;
   display: block !important;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
 }
 
 @media only screen and (max-width: 991px) {
@@ -237,6 +246,9 @@ code {
 }
 
 .row-col {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   width: 100%;
 }
 
@@ -246,8 +258,14 @@ code {
 }
 
 .country-flag {
-  width: 90%;
+  border: 2px solid black;
+  padding: 0.5rem;
+  width: 80%;
   height: auto;
+}
+
+.flag-caption {
+  margin-top: 0.5rem;
 }
 
 .additional-col {
@@ -459,7 +477,8 @@ code {
 
 .more-info-title {
   text-align: center;
-  font-size: 2rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
 }
 
 #mapid {
@@ -523,7 +542,7 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 40%;
+  width: 50%;
 }
 
 .search-error-container {
@@ -549,7 +568,7 @@ code {
 .empty-search-message-container {
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
-  width: 40%;
+  width: 50%;
 }
 
 .about-container {

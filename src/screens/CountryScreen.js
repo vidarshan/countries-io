@@ -32,131 +32,112 @@ const CountryScreen = ({ match }) => {
             return (
               <Fragment key={key}>
                 <Row className='row-col'>
-                  <Col
-                    xs={24}
-                    xl={12}
-                    sm={24}
-                    md={24}
-                    lg={24}
-                    className='basic-col'>
-                    <div className='country-title'>{item.name}</div>
-                  </Col>
+                  <div className='country-title'>{item.name}</div>
                 </Row>
-                <Row gutter={12} className='row-col'>
-                  <Col
-                    xs={24}
-                    xl={12}
-                    sm={24}
-                    md={24}
-                    lg={24}
-                    className='basic-col'>
+                <Row className='row-col'>
+                  <div className='image-container'>
                     <img
                       className='country-flag'
                       src={item.flag}
                       alt={`Flag of ${item.name}`}
                     />
-                  </Col>
-                  <Col
-                    xs={24}
-                    xl={12}
-                    sm={24}
-                    md={24}
-                    lg={24}
-                    className='additional-col'>
-                    <Row className='basic-info-title'>Basic Information</Row>
-                    <Row className='additional-row'>
-                      <Col xs={12} xl={8} sm={8} md={8} lg={8}>
-                        <div className='top-level-domain-container'>
-                          <div className='title'>Top Level Domain</div>
-                          <div className='top-level-domain'>
-                            {map(item.topLevelDomain, (domain, key) => {
-                              return <div key={key}>{domain}</div>;
-                            })}
-                          </div>
-                        </div>
-                      </Col>
-                      <Col xs={12} xl={8} sm={8} md={8} lg={8}>
-                        <div className='alpha-code-container'>
-                          <div className='title'>Alpha 2 code</div>
-                          <div className='alpha-code'>{item.alpha2Code}</div>
-                        </div>
-                      </Col>
-                      <Col xs={24} xl={8} sm={8} md={8} lg={8}>
-                        <div className='alpha-code-container'>
-                          <div className='title'>Alpha 3 code</div>
-                          <div className='alpha-code'>{item.alpha3Code}</div>
-                        </div>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs={8} xl={8} sm={8} md={8} lg={8}>
-                        <div className='calling-code-container'>
-                          <div className='title'>Calling code</div>
-                          <div className='calling-code'>
-                            {map(item.callingCodes, (callingCode, key) => {
-                              return <div key={key}>+{callingCode}</div>;
-                            })}
-                          </div>
-                        </div>
-                      </Col>
-                      <Col xs={8} xl={8} sm={8} md={8} lg={8}>
-                        <div className='capital-container'>
-                          <div className='title'>Capital</div>
-                          <div className='capital'>{item.capital}</div>
-                        </div>
-                      </Col>
-                      <Col xs={8} xl={8} sm={8} md={8} lg={8}>
-                        <div className='region-container'>
-                          <div className='title'>Region</div>
-                          <div className='region'>{item.region}</div>
-                        </div>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col xs={12} xl={8} sm={8} md={8} lg={8}>
-                        <div className='sub-region-container'>
-                          <div className='title'>Sub-region</div>
-                          <div className='sub-region'>{item.subregion}</div>
-                        </div>
-                      </Col>
-                      <Col xs={12} xl={8} sm={8} md={8} lg={8}>
-                        <div className='population-container'>
-                          <div className='title'>Population</div>
-                          <div className='population'>
-                            {new Intl.NumberFormat().format(item.population)}
-                          </div>
-                        </div>
-                      </Col>
-                      <Col xs={24} xl={8} sm={8} md={8} lg={8}>
-                        <div className='demonym-container'>
-                          <div className='title'>Demonym</div>
-                          <div className='demonym'>{item.demonym}</div>
-                        </div>
-                      </Col>
-                    </Row>
 
-                    {/* lat, long */}
-                    <Row>
-                      <Col xs={12} xl={8} sm={8} md={8} lg={8}>
-                        <div className='area-container'>
-                          <div className='title'>Area</div>
-                          {new Intl.NumberFormat().format(item.area)}
+                    <div className='flag-caption'>Flag of {item.name}</div>
+                  </div>
+                </Row>
+                <Row className='row-col'>
+                  <Row className='basic-info-title'>Basic Information</Row>
+                  <Row className='additional-row'>
+                    <Col xs={12} xl={8} sm={8} md={8} lg={8}>
+                      <div className='top-level-domain-container'>
+                        <div className='title'>Top Level Domain</div>
+                        <div className='top-level-domain'>
+                          {map(item.topLevelDomain, (domain, key) => {
+                            return <div key={key}>{domain}</div>;
+                          })}
                         </div>
-                      </Col>
-                      <Col xs={12} xl={8} sm={8} md={8} lg={8}>
-                        <div className='gini-container'>
-                          <div className='title'>Gini</div>
-                          <div className='gini'>{item.gini}</div>
+                      </div>
+                    </Col>
+                    <Col xs={12} xl={8} sm={8} md={8} lg={8}>
+                      <div className='alpha-code-container'>
+                        <div className='title'>Alpha 2 code</div>
+                        <div className='alpha-code'>{item.alpha2Code}</div>
+                      </div>
+                    </Col>
+                    <Col xs={24} xl={8} sm={8} md={8} lg={8}>
+                      <div className='alpha-code-container'>
+                        <div className='title'>Alpha 3 code</div>
+                        <div className='alpha-code'>{item.alpha3Code}</div>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row className='additional-row'>
+                    <Col xs={8} xl={8} sm={8} md={8} lg={8}>
+                      <div className='calling-code-container'>
+                        <div className='title'>Calling code</div>
+                        <div className='calling-code'>
+                          {map(item.callingCodes, (callingCode, key) => {
+                            return <div key={key}>+{callingCode}</div>;
+                          })}
                         </div>
-                      </Col>
-                      <Col xs={24} xl={8} sm={8} md={8} lg={8}>
-                        <div className='numeric-code-container'>
-                          <div className='title'>Numeric Code</div>
-                          <div className='numeric_code'>{item.numericCode}</div>
+                      </div>
+                    </Col>
+                    <Col xs={8} xl={8} sm={8} md={8} lg={8}>
+                      <div className='capital-container'>
+                        <div className='title'>Capital</div>
+                        <div className='capital'>{item.capital}</div>
+                      </div>
+                    </Col>
+                    <Col xs={8} xl={8} sm={8} md={8} lg={8}>
+                      <div className='region-container'>
+                        <div className='title'>Region</div>
+                        <div className='region'>{item.region}</div>
+                      </div>
+                    </Col>
+                  </Row>
+                  <Row className='additional-row'>
+                    <Col xs={12} xl={8} sm={8} md={8} lg={8}>
+                      <div className='sub-region-container'>
+                        <div className='title'>Sub-region</div>
+                        <div className='sub-region'>{item.subregion}</div>
+                      </div>
+                    </Col>
+                    <Col xs={12} xl={8} sm={8} md={8} lg={8}>
+                      <div className='population-container'>
+                        <div className='title'>Population</div>
+                        <div className='population'>
+                          {new Intl.NumberFormat().format(item.population)}
                         </div>
-                      </Col>
-                    </Row>
-                  </Col>
+                      </div>
+                    </Col>
+                    <Col xs={24} xl={8} sm={8} md={8} lg={8}>
+                      <div className='demonym-container'>
+                        <div className='title'>Demonym</div>
+                        <div className='demonym'>{item.demonym}</div>
+                      </div>
+                    </Col>
+                  </Row>
+
+                  <Row className='additional-row'>
+                    <Col xs={12} xl={8} sm={8} md={8} lg={8}>
+                      <div className='area-container'>
+                        <div className='title'>Area</div>
+                        {new Intl.NumberFormat().format(item.area)}
+                      </div>
+                    </Col>
+                    <Col xs={12} xl={8} sm={8} md={8} lg={8}>
+                      <div className='gini-container'>
+                        <div className='title'>Gini</div>
+                        <div className='gini'>{item.gini}</div>
+                      </div>
+                    </Col>
+                    <Col xs={24} xl={8} sm={8} md={8} lg={8}>
+                      <div className='numeric-code-container'>
+                        <div className='title'>Numeric Code</div>
+                        <div className='numeric_code'>{item.numericCode}</div>
+                      </div>
+                    </Col>
+                  </Row>
                 </Row>
                 <Row className='more-info-title'>More Information</Row>
                 <Row className='row-col'>
