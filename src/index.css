@@ -527,7 +527,7 @@ code {
   justify-content: center;
   align-items: center;
   height: 100vh !important;
-  width: 100vw !important;
+  width: 100% !important;
 }
 
 .countries-main-title {
