@@ -515,10 +515,6 @@ code {
 }
 
 .regional-blocks-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border: 2px solid black;
   margin: 0.2rem;
   padding: 0.2rem;
