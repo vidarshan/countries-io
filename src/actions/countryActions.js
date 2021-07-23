@@ -75,6 +75,11 @@ export const searchCountries = (criteria, keyword) => async (dispatch) => {
           `https://restcountries.eu/rest/v2/region/${keyword}`
         );
         break;
+      case 'regionalbloc':
+        data = await axios.get(
+          `https://restcountries.eu/rest/v2/regionalbloc/${keyword}`
+        );
+        break;
       default:
         break;
     }

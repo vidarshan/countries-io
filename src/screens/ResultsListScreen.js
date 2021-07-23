@@ -21,7 +21,7 @@ const ResultsListScreen = ({ match }) => {
   }, [dispatch, match]);
 
   return (
-    <Row gutter={[20, 20]} className='margin-extra'>
+    <Row gutter={[20, 48]} className='margin-extra'>
       {loading ? (
         <Spin size='large' />
       ) : error ? (
