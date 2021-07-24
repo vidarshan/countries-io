@@ -451,10 +451,6 @@ code {
 }
 
 .alt-spellings-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border: 2px solid black;
   margin: 0.2rem;
   padding: 0.2rem;
@@ -515,10 +511,6 @@ code {
 }
 
 .regional-blocks-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border: 2px solid black;
   margin: 0.2rem;
   padding: 0.2rem;
@@ -652,4 +644,72 @@ code {
 .about-version {
   font-size: 1rem;
   margin: 0.4rem 0;
+}
+
+.translation {
+  text-align: left;
+}
+
+.translation-col {
+  background-color: #e4e4e4;
+  margin: 0.2rem;
+}
+
+.translation-fullname {
+  color: #878787;
+  display: flex;
+  justify-content: center;
+}
+
+.translation-translation {
+  display: flex;
+  justify-content: center;
+}
+
+.timezones-col {
+  margin: 0.2rem;
+  background-color: #e4e4e4;
+}
+
+.timezones-row {
+  display: flex;
+  width: 100% !important;
+  justify-content: center;
+}
+
+.borders-row {
+  display: flex;
+  justify-content: center;
+  width: 100% !important;
+}
+
+.border-col {
+  margin: 0.2rem;
+  width: 100% !important;
+  background-color: #e4e4e4;
+}
+
+.regional-bloc-col {
+  margin: 0.2rem;
+  background-color: #e4e4e4;
+}
+
+.alt-spelling-col {
+  margin: 0.2rem;
+  width: 100% !important;
+  background-color: #e4e4e4;
+}
+
+.currency-col {
+  margin: 0.2rem;
+  background-color: #e4e4e4;
+}
+
+.languages-col {
+  background-color: #e4e4e4;
+}
+
+.border-fullname {
+  width: 100% !important;
+  margin: 0.2rem;
 }
