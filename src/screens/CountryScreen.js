@@ -512,7 +512,9 @@ const CountryScreen = ({ match }) => {
                         style={{ height: 500, width: '100%' }}>
                         <TileLayer
                           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-                          noWrap={true}
+                          noWrap={false}
+                          minZoom={2}
+                          maxZoom={7}
                         />
 
                         <Marker
