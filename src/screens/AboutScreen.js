@@ -4,7 +4,6 @@ const AboutScreen = () => {
   return (
     <div className='about-container'>
       <img className='about-image' src='/images/location.png' alt='' />
-
       <div className='about-title'>countries.io</div>
       <div className='about-description'>
         Made by vidarshan with the use of restcountries.eu API

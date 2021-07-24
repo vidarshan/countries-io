@@ -1,11 +1,10 @@
 import React, { Fragment, useEffect } from 'react';
-
+import { useSelector, useDispatch } from 'react-redux';
 import { Map, Marker, Popup, TileLayer, Tooltip } from 'react-leaflet';
 import { Row, Col, Spin } from 'antd';
-import { useSelector, useDispatch } from 'react-redux';
+
 import Message from '../components/Message';
 import { getCountry } from '../actions/countryActions';
-
 import { alpha3ToFullName } from '../data/Alpha3';
 import { translationAbbreviations } from '../data/Translations';
 
@@ -31,13 +30,9 @@ const CountryScreen = ({ match }) => {
     translationAbbreviation,
     translation
   ) => {
-    console.log(translationAbbreviation);
-
     let fullName = find(translationAbbreviations, {
       abbreviation: translationAbbreviation,
     });
-
-    console.log(fullName.fullName);
 
     if (fullName) {
       return (

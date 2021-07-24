@@ -11,8 +11,6 @@ const HomeScreen = () => {
   const history = useHistory();
 
   const [criteria, setCriteria] = useState('name');
-  const [keyword, setKeyword] = useState();
-  const [disabled, setDisabled] = useState(false);
   const [message, setMessage] = useState();
   const [showMessage, setShowMessage] = useState(false);
   const [placeholder, setPlaceholder] = useState(
@@ -57,8 +55,6 @@ const HomeScreen = () => {
       setShowMessage(true);
       setMessage('Please enter your search keyword');
     }
-
-    console.log(showMessage);
   }
 
   return (
@@ -92,7 +88,6 @@ const HomeScreen = () => {
           <Search
             size='large'
             className='countries-input-field'
-            disabled={disabled}
             placeholder={placeholder}
             onSearch={(event) => searchCountry(criteria, event)}
           />

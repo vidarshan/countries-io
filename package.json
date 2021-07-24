@@ -1,6 +1,6 @@
 {
   "name": "countries-io",
-  "version": "0.1.0",
+  "version": "1.0",
   "private": true,
   "dependencies": {
     "@react-leaflet/core": ">=1.0.0 <1.1.0 || ^1.1.1",
@@ -12,7 +12,6 @@
     "leaflet": "^1.6.0",
     "lodash.find": "^4.6.0",
     "lodash.map": "^4.6.0",
-    "lodash.take": "^4.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-leaflet": "^2.6.0",
