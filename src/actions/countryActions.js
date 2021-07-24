@@ -47,8 +47,6 @@ export const searchCountries = (criteria, keyword) => async (dispatch) => {
         data = await axios.get(
           `https://restcountries.eu/rest/v2/name/${keyword}`
         );
-
-        console.log(`https://restcountries.eu/rest/v2/name/${keyword}`);
         break;
       case 'currency':
         data = await axios.get(

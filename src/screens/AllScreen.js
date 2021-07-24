@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
-import { Row, Col, Spin } from 'antd';
-import CountryCard from '../components/CountryCard';
 import { useDispatch, useSelector } from 'react-redux';
+import { Row, Col, Spin } from 'antd';
 import map from 'lodash.map';
+
+import CountryCard from '../components/CountryCard';
 import { getAllCountries } from '../actions/countryActions';
 import Message from '../components/Message';
 

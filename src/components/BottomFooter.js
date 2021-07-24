@@ -1,12 +1,13 @@
 import React from 'react';
-
 import { Layout } from 'antd';
+import moment from 'moment';
+
 const { Footer } = Layout;
 
 const BottomFooter = () => {
   return (
     <Footer style={{ textAlign: 'center' }}>
-      &copy; 2021 Made with ❤️ by vidarshan.r{' '}
+      &copy; {moment().year()} Made with ❤️ by vidarshan.r{' '}
       <img
         height={30}
         width={30}

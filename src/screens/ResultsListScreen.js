@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import map from 'lodash.map';
 import { Row, Col, Spin } from 'antd';
+
 import CountryCard from '../components/CountryCard';
 import { searchCountries } from '../actions/countryActions';
-import map from 'lodash.map';
-import Message from '../components/Message';
 import EmptyContainer from '../components/EmptyContainer';
 
 const ResultsListScreen = ({ match }) => {
@@ -18,6 +18,7 @@ const ResultsListScreen = ({ match }) => {
 
   useEffect(() => {
     dispatch(searchCountries(type, name));
+    // eslint-disable-next-line
   }, [dispatch, match]);
 
   return (
