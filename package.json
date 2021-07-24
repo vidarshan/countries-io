@@ -10,6 +10,7 @@
     "antd": "^4.16.7",
     "axios": "^0.21.1",
     "leaflet": "^1.6.0",
+    "lodash.find": "^4.6.0",
     "lodash.map": "^4.6.0",
     "lodash.take": "^4.1.1",
     "react": "^17.0.2",
