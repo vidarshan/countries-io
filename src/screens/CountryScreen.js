@@ -41,15 +41,17 @@ const CountryScreen = ({ match }) => {
 
     if (fullName) {
       return (
-        <div className='translation'>
-          {fullName.fullName + '-' + translation}
-        </div>
+        <Col className='translation-col'>
+          <Row className='translation-fullname'>{fullName.fullName}</Row>
+          <Row className='translation-translation'>{translation}</Row>
+        </Col>
       );
     } else {
       return (
-        <div className='translation'>
-          {translationAbbreviation + '-' + translation}
-        </div>
+        <Col>
+          <Row>{translationAbbreviation}</Row>
+          <Row>{translation}</Row>
+        </Col>
       );
     }
   };
@@ -105,7 +107,7 @@ const CountryScreen = ({ match }) => {
                     </Col>
                     <Col xs={12} xl={8} sm={8} md={8} lg={8}>
                       <div className='alpha-code-container'>
-                        <div className='title'>Alpha 2 code</div>
+                        <div className='title'>Alpha 2 Code</div>
                         <div className='alpha-code'>
                           {item.alpha2Code === null ? '-' : item.alpha2Code}
                         </div>
@@ -113,7 +115,7 @@ const CountryScreen = ({ match }) => {
                     </Col>
                     <Col xs={24} xl={8} sm={8} md={8} lg={8}>
                       <div className='alpha-code-container'>
-                        <div className='title'>Alpha 3 code</div>
+                        <div className='title'>Alpha 3 Code</div>
                         <div className='alpha-code'>
                           {item.alpha3Code === null ? '-' : item.alpha3Code}
                         </div>
@@ -123,7 +125,7 @@ const CountryScreen = ({ match }) => {
                   <Row className='additional-row'>
                     <Col xs={8} xl={8} sm={8} md={8} lg={8}>
                       <div className='calling-code-container'>
-                        <div className='title'>Calling code</div>
+                        <div className='title'>Calling Code</div>
                         <div className='calling-code'>
                           {map(item.callingCodes, (callingCode, key) => {
                             return (
@@ -217,35 +219,39 @@ const CountryScreen = ({ match }) => {
                       <div className='title'>Alternate Spellings</div>
                       {map(item.altSpellings, (altSpelling, key) => {
                         return (
-                          <div className='alt-spelling' key={key}>
-                            {altSpelling === null ? '-' : altSpelling}
-                          </div>
+                          <Row className='row-col'>
+                            <Col xs={24} xl={8} sm={8} md={8} lg={8}>
+                              <div className='alt-spelling' key={key}>
+                                {altSpelling === null ? '-' : altSpelling}
+                              </div>
+                            </Col>
+                          </Row>
                         );
                       })}
                     </div>
                   </Col>
                   <Col xs={24} xl={6} sm={24} md={24} lg={12}>
+                    {' '}
                     <div className='timezones-container'>
                       <div className='title'>Timezones</div>
-                      <div className='timezones'>
-                        <Row className='row-col'>
-                          {item.timezones !== null
-                            ? map(item.timezones, (timezone, key) => {
-                                return (
-                                  <Col
-                                    key={key}
-                                    xs={8}
-                                    xl={8}
-                                    sm={8}
-                                    md={8}
-                                    lg={8}>
-                                    {timezone}
-                                  </Col>
-                                );
-                              })
-                            : '-'}
-                        </Row>
-                      </div>
+                      <Row className='row-col'>
+                        {item.timezones !== null
+                          ? map(item.timezones, (timezone, key) => {
+                              return (
+                                <Col
+                                  className='timezones-col'
+                                  key={key}
+                                  xs={11}
+                                  xl={11}
+                                  sm={11}
+                                  md={11}
+                                  lg={11}>
+                                  {timezone}
+                                </Col>
+                              );
+                            })
+                          : '-'}
+                      </Row>
                     </div>
                   </Col>
                   <Col xs={24} xl={6} sm={24} md={24} lg={12}>
@@ -398,27 +404,35 @@ const CountryScreen = ({ match }) => {
                   </Col>
                   <Col xs={24} xl={8} sm={24} md={24} lg={24}>
                     <div className='regional-blocks-container'>
-                      <div className='title'>Regional blocks</div>
+                      <div className='title'>Regional Blocs</div>
                       <div className='regional-blocks'>
                         {item.regionalBlocs === null ||
-                        item.regionalBlocs.length === 0
-                          ? '-'
-                          : map(item.regionalBlocs, (block, key) => {
+                        item.regionalBlocs.length === 0 ? (
+                          '-'
+                        ) : (
+                          <>
+                            <Row key={key} className='row-col'>
+                              <Col xs={4} xl={4} sm={4} md={4} lg={4}>
+                                Acronym
+                              </Col>
+                              <Col xs={20} xl={20} sm={20} md={20} lg={20}>
+                                Name
+                              </Col>
+                            </Row>
+                            {map(item.regionalBlocs, (block, key) => {
                               return (
                                 <Row key={key} className='row-col'>
-                                  <Row className='row-col'>{block.acronym}</Row>
-                                  <Row className='row-col'>{block.name}</Row>
-                                  <Row>{block.otherAcronyms}</Row>
-                                  {map(block.otherNames, (otherName, key) => {
-                                    return (
-                                      <Row key={key} className='row-col'>
-                                        {otherName}
-                                      </Row>
-                                    );
-                                  })}
+                                  <Col xs={4} xl={4} sm={4} md={4} lg={4}>
+                                    {block.acronym}
+                                  </Col>
+                                  <Col xs={20} xl={20} sm={20} md={20} lg={20}>
+                                    {block.name}
+                                  </Col>
                                 </Row>
                               );
                             })}
+                          </>
+                        )}
                       </div>
                     </div>
                   </Col>

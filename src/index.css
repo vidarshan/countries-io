@@ -649,3 +649,31 @@ code {
 .translation {
   text-align: left;
 }
+
+.translation-col {
+  background-color: #e4e4e4;
+  margin: 0.2rem;
+}
+
+.translation-fullname {
+  color: #878787;
+  display: flex;
+  justify-content: center;
+}
+
+.translation-translation {
+  display: flex;
+  justify-content: center;
+}
+
+.timezones-col {
+  margin: 0.2rem;
+  background-color: #e4e4e4;
+}
+
+.timezones-row {
+  display: flex;
+  width: 100% !important;
+
+  justify-content: center;
+}
