@@ -7,6 +7,7 @@ import Message from '../components/Message';
 import { getCountry } from '../actions/countryActions';
 
 import { alpha3ToFullName } from '../data/Alpha3';
+import { translationAbbreviations } from '../data/Translations';
 
 import map from 'lodash.map';
 import find from 'lodash.find';
@@ -23,6 +24,33 @@ const CountryScreen = ({ match }) => {
       return <div>{fullName.fullName}</div>;
     } else {
       return <div>{alpha3Name}</div>;
+    }
+  };
+
+  const convertTranslationAbbreviationstoFullName = (
+    translationAbbreviation,
+    translation
+  ) => {
+    console.log(translationAbbreviation);
+
+    let fullName = find(translationAbbreviations, {
+      abbreviation: translationAbbreviation,
+    });
+
+    console.log(fullName.fullName);
+
+    if (fullName) {
+      return (
+        <div className='translation'>
+          {fullName.fullName + '-' + translation}
+        </div>
+      );
+    } else {
+      return (
+        <div className='translation'>
+          {translationAbbreviation + '-' + translation}
+        </div>
+      );
     }
   };
 
@@ -236,7 +264,6 @@ const CountryScreen = ({ match }) => {
                                     sm={8}
                                     md={8}
                                     lg={8}>
-                                    {/* {border === null ? '-' : border} */}
                                     {convertAlpha3ToFullName(border)}
                                   </Col>
                                 );
@@ -247,25 +274,46 @@ const CountryScreen = ({ match }) => {
                   </Col>
                   <Col xs={24} xl={6} sm={24} md={24} lg={12}>
                     <div className='currencies-container'>
-                      <div className='title'>Currency</div>
+                      <div className='title'>Currency</div>{' '}
                       <div className='currency'>
-                        {item.currencies === null
-                          ? '-'
-                          : map(item.currencies, (currency, key) => {
+                        {item.currencies === null ? (
+                          '-'
+                        ) : (
+                          <>
+                            <Row key={key} className='row-col'>
+                              <Col xs={6} xl={6} sm={8} md={8} lg={8}>
+                                Code
+                              </Col>
+
+                              <Col xs={8} xl={12} sm={8} md={8} lg={8}>
+                                Name
+                              </Col>
+
+                              <Col xs={6} xl={6} sm={8} md={8} lg={8}>
+                                Symbol
+                              </Col>
+                            </Row>
+                            {map(item.currencies, (currency, key) => {
                               return (
-                                <Row key={key} className='row-col'>
-                                  <Col xs={6} xl={6} sm={8} md={8} lg={8}>
-                                    {currency.code}
-                                  </Col>
-                                  <Col xs={8} xl={12} sm={8} md={8} lg={8}>
-                                    {currency.name}
-                                  </Col>
-                                  <Col xs={6} xl={6} sm={8} md={8} lg={8}>
-                                    {currency.symbol}
-                                  </Col>
-                                </Row>
+                                <>
+                                  <Row key={key} className='row-col'>
+                                    <Col xs={6} xl={6} sm={8} md={8} lg={8}>
+                                      {currency.code}
+                                    </Col>
+
+                                    <Col xs={8} xl={12} sm={8} md={8} lg={8}>
+                                      {currency.name}
+                                    </Col>
+
+                                    <Col xs={6} xl={6} sm={8} md={8} lg={8}>
+                                      {currency.symbol}
+                                    </Col>
+                                  </Row>
+                                </>
                               );
                             })}
+                          </>
+                        )}
                       </div>
                     </div>
                   </Col>
@@ -276,11 +324,27 @@ const CountryScreen = ({ match }) => {
                       <div className='title'>Languages</div>
                       <div className='languages'>
                         <Row className='row-col'>
-                          {item.languages === null
-                            ? '-'
-                            : map(item.languages, (language, key) => {
+                          {item.languages === null ? (
+                            '-'
+                          ) : (
+                            <>
+                              <Row key={key} className='row-col'>
+                                <Col xs={4} xl={4} sm={4} md={4} lg={4}>
+                                  ISO 639-1
+                                </Col>
+                                <Col xs={4} xl={4} sm={4} md={4} lg={4}>
+                                  ISO 639-2
+                                </Col>
+                                <Col xs={8} xl={8} sm={8} md={8} lg={8}>
+                                  Name
+                                </Col>
+                                <Col xs={8} xl={8} sm={8} md={8} lg={8}>
+                                  Native Name
+                                </Col>
+                              </Row>
+                              {map(item.languages, (language, key) => {
                                 return (
-                                  <Fragment key={key}>
+                                  <Row key={key} className='row-col'>
                                     <Col xs={4} xl={4} sm={4} md={4} lg={4}>
                                       {language.iso639_1}
                                     </Col>
@@ -293,9 +357,11 @@ const CountryScreen = ({ match }) => {
                                     <Col xs={8} xl={8} sm={8} md={8} lg={8}>
                                       {language.nativeName}
                                     </Col>
-                                  </Fragment>
+                                  </Row>
                                 );
                               })}
+                            </>
+                          )}
                         </Row>
                       </div>
                     </div>
@@ -318,7 +384,10 @@ const CountryScreen = ({ match }) => {
                                       sm={12}
                                       md={12}
                                       lg={12}>
-                                      <div>{i}</div>
+                                      {convertTranslationAbbreviationstoFullName(
+                                        i[0],
+                                        i[1]
+                                      )}
                                     </Col>
                                   );
                                 }

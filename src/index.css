@@ -451,10 +451,6 @@ code {
 }
 
 .alt-spellings-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border: 2px solid black;
   margin: 0.2rem;
   padding: 0.2rem;
@@ -648,4 +644,8 @@ code {
 .about-version {
   font-size: 1rem;
   margin: 0.4rem 0;
+}
+
+.translation {
+  text-align: left;
 }
