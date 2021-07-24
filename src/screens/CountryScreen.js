@@ -21,7 +21,7 @@ const CountryScreen = ({ match }) => {
   const convertAlpha3ToFullName = (alpha3Name) => {
     let fullName = find(alpha3ToFullName, { alpha3: alpha3Name });
     if (fullName) {
-      return <div>{fullName.fullName}</div>;
+      return <div className='border-fullname'>{fullName.fullName}</div>;
     } else {
       return <div>{alpha3Name}</div>;
     }
@@ -220,7 +220,13 @@ const CountryScreen = ({ match }) => {
                       {map(item.altSpellings, (altSpelling, key) => {
                         return (
                           <Row className='row-col'>
-                            <Col xs={24} xl={8} sm={8} md={8} lg={8}>
+                            <Col
+                              className='alt-spelling-col'
+                              xs={24}
+                              xl={24}
+                              sm={24}
+                              md={24}
+                              lg={24}>
                               <div className='alt-spelling' key={key}>
                                 {altSpelling === null ? '-' : altSpelling}
                               </div>
@@ -257,25 +263,24 @@ const CountryScreen = ({ match }) => {
                   <Col xs={24} xl={6} sm={24} md={24} lg={12}>
                     <div className='borders-container'>
                       <div className='title'>Borders</div>
-                      <div className='borders'>
-                        <Row className='row-col'>
-                          {item.borders === null || item.borders.length === 0
-                            ? '-'
-                            : map(item.borders, (border, key) => {
-                                return (
-                                  <Col
-                                    className={key}
-                                    xs={8}
-                                    xl={8}
-                                    sm={8}
-                                    md={8}
-                                    lg={8}>
-                                    {convertAlpha3ToFullName(border)}
-                                  </Col>
-                                );
-                              })}
-                        </Row>
-                      </div>
+                      <Row className='borders-row'>
+                        {item.borders === null || item.borders.length === 0
+                          ? '-'
+                          : map(item.borders, (border, key) => {
+                              return (
+                                <Col
+                                  key={key}
+                                  className='border-col'
+                                  xs={11}
+                                  xl={11}
+                                  sm={11}
+                                  md={11}
+                                  lg={11}>
+                                  {convertAlpha3ToFullName(border)}
+                                </Col>
+                              );
+                            })}
+                      </Row>
                     </div>
                   </Col>
                   <Col xs={24} xl={6} sm={24} md={24} lg={12}>
@@ -285,17 +290,35 @@ const CountryScreen = ({ match }) => {
                         {item.currencies === null ? (
                           '-'
                         ) : (
-                          <>
-                            <Row key={key} className='row-col'>
-                              <Col xs={6} xl={6} sm={8} md={8} lg={8}>
+                          <Row className='currency-col'>
+                            <Row key={key} className='row-col '>
+                              <Col
+                                className='translation-fullname'
+                                xs={6}
+                                xl={6}
+                                sm={8}
+                                md={8}
+                                lg={8}>
                                 Code
                               </Col>
 
-                              <Col xs={8} xl={12} sm={8} md={8} lg={8}>
+                              <Col
+                                className='translation-fullname'
+                                xs={8}
+                                xl={12}
+                                sm={8}
+                                md={8}
+                                lg={8}>
                                 Name
                               </Col>
 
-                              <Col xs={6} xl={6} sm={8} md={8} lg={8}>
+                              <Col
+                                className='translation-fullname'
+                                xs={6}
+                                xl={6}
+                                sm={8}
+                                md={8}
+                                lg={8}>
                                 Symbol
                               </Col>
                             </Row>
@@ -318,7 +341,7 @@ const CountryScreen = ({ match }) => {
                                 </>
                               );
                             })}
-                          </>
+                          </Row>
                         )}
                       </div>
                     </div>
@@ -335,32 +358,80 @@ const CountryScreen = ({ match }) => {
                           ) : (
                             <>
                               <Row key={key} className='row-col'>
-                                <Col xs={4} xl={4} sm={4} md={4} lg={4}>
+                                <Col
+                                  className='translation-fullname'
+                                  xs={4}
+                                  xl={4}
+                                  sm={4}
+                                  md={4}
+                                  lg={4}>
                                   ISO 639-1
                                 </Col>
-                                <Col xs={4} xl={4} sm={4} md={4} lg={4}>
+                                <Col
+                                  className='translation-fullname'
+                                  xs={4}
+                                  xl={4}
+                                  sm={4}
+                                  md={4}
+                                  lg={4}>
                                   ISO 639-2
                                 </Col>
-                                <Col xs={8} xl={8} sm={8} md={8} lg={8}>
+                                <Col
+                                  className='translation-fullname'
+                                  xs={8}
+                                  xl={8}
+                                  sm={8}
+                                  md={8}
+                                  lg={8}>
                                   Name
                                 </Col>
-                                <Col xs={8} xl={8} sm={8} md={8} lg={8}>
+                                <Col
+                                  className='translation-fullname'
+                                  xs={8}
+                                  xl={8}
+                                  sm={8}
+                                  md={8}
+                                  lg={8}>
                                   Native Name
                                 </Col>
                               </Row>
                               {map(item.languages, (language, key) => {
                                 return (
                                   <Row key={key} className='row-col'>
-                                    <Col xs={4} xl={4} sm={4} md={4} lg={4}>
+                                    <Col
+                                      className='languages-col'
+                                      xs={4}
+                                      xl={4}
+                                      sm={4}
+                                      md={4}
+                                      lg={4}>
                                       {language.iso639_1}
                                     </Col>
-                                    <Col xs={4} xl={4} sm={4} md={4} lg={4}>
+                                    <Col
+                                      className='languages-col'
+                                      xs={4}
+                                      xl={4}
+                                      sm={4}
+                                      md={4}
+                                      lg={4}>
                                       {language.iso639_2}
                                     </Col>
-                                    <Col xs={8} xl={8} sm={8} md={8} lg={8}>
+                                    <Col
+                                      className='languages-col'
+                                      xs={8}
+                                      xl={8}
+                                      sm={8}
+                                      md={8}
+                                      lg={8}>
                                       {language.name}
                                     </Col>
-                                    <Col xs={8} xl={8} sm={8} md={8} lg={8}>
+                                    <Col
+                                      className='languages-col'
+                                      xs={8}
+                                      xl={8}
+                                      sm={8}
+                                      md={8}
+                                      lg={8}>
                                       {language.nativeName}
                                     </Col>
                                   </Row>
@@ -375,31 +446,26 @@ const CountryScreen = ({ match }) => {
                   <Col xs={24} xl={8} sm={24} md={24} lg={12}>
                     <div className='translations-container'>
                       <div className='title'>Translations</div>
-                      <div className='translations'>
-                        <Row className='row-col'>
-                          {item.translations === null
-                            ? '-'
-                            : map(
-                                Object.entries(item.translations),
-                                (i, key) => {
-                                  return (
-                                    <Col
-                                      key={key}
-                                      xs={12}
-                                      xl={12}
-                                      sm={12}
-                                      md={12}
-                                      lg={12}>
-                                      {convertTranslationAbbreviationstoFullName(
-                                        i[0],
-                                        i[1]
-                                      )}
-                                    </Col>
-                                  );
-                                }
-                              )}
-                        </Row>
-                      </div>
+                      <Row className='row-col'>
+                        {item.translations === null
+                          ? '-'
+                          : map(Object.entries(item.translations), (i, key) => {
+                              return (
+                                <Col
+                                  key={key}
+                                  xs={24}
+                                  xl={12}
+                                  sm={12}
+                                  md={12}
+                                  lg={12}>
+                                  {convertTranslationAbbreviationstoFullName(
+                                    i[0],
+                                    i[1]
+                                  )}
+                                </Col>
+                              );
+                            })}
+                      </Row>
                     </div>
                   </Col>
                   <Col xs={24} xl={8} sm={24} md={24} lg={24}>
@@ -411,17 +477,9 @@ const CountryScreen = ({ match }) => {
                           '-'
                         ) : (
                           <>
-                            <Row key={key} className='row-col'>
-                              <Col xs={4} xl={4} sm={4} md={4} lg={4}>
-                                Acronym
-                              </Col>
-                              <Col xs={20} xl={20} sm={20} md={20} lg={20}>
-                                Name
-                              </Col>
-                            </Row>
                             {map(item.regionalBlocs, (block, key) => {
                               return (
-                                <Row key={key} className='row-col'>
+                                <Row key={key} className='regional-bloc-col'>
                                   <Col xs={4} xl={4} sm={4} md={4} lg={4}>
                                     {block.acronym}
                                   </Col>
