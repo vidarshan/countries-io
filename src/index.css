@@ -615,6 +615,7 @@ code {
 
 .empty-container-text {
   font-size: 18px;
+  text-align: center;
 }
 
 .empty-search-message-container {
