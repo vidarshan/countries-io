@@ -17,7 +17,9 @@ export const getAllCountries = () => async (dispatch) => {
       type: GET_ALL_COUNTRIES_REQUEST,
     });
 
-    const { data } = await axios.get('https://restcountries.eu/rest/v2/all');
+    const { data } = await axios.get('https://restcountries.com/v3/all');
+
+    console.log(data)
 
     dispatch({
       type: GET_ALL_COUNTRIES_SUCCESS,
