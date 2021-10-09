@@ -7,7 +7,7 @@ const { Footer } = Layout;
 const BottomFooter = () => {
   return (
     <Footer style={{ textAlign: 'center' }}>
-      &copy; {moment().year()} Made with ❤️ by vidarshan.r{' '}
+      &copy; {moment().year()} Made with  🙂 {' '} {' '} by vidarshan.r{' '}
       <img
         height={30}
         width={30}

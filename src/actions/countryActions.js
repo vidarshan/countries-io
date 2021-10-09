@@ -19,8 +19,6 @@ export const getAllCountries = () => async (dispatch) => {
 
     const { data } = await axios.get('https://restcountries.com/v3/all');
 
-    console.log(data)
-
     dispatch({
       type: GET_ALL_COUNTRIES_SUCCESS,
       payload: data,
@@ -47,37 +45,32 @@ export const searchCountries = (criteria, keyword) => async (dispatch) => {
     switch (criteria) {
       case 'name':
         data = await axios.get(
-          `https://restcountries.eu/rest/v2/name/${keyword}`
+          `https://restcountries.com/v3/name/${keyword}`
         );
         break;
       case 'currency':
         data = await axios.get(
-          `https://restcountries.eu/rest/v2/currency/${keyword}`
+          `https://restcountries.com/v3/currency/${keyword}`
         );
         break;
       case 'language':
         data = await axios.get(
-          `https://restcountries.eu/rest/v2/lang/${keyword}`
+          `https://restcountries.com/v3/lang/${keyword}`
         );
         break;
       case 'capitalcity':
         data = await axios.get(
-          `https://restcountries.eu/rest/v2/capital/${keyword}`
+          `https://restcountries.com/v3/capital/${keyword}`
         );
         break;
-      case 'callingcode':
-        data = await axios.get(
-          `https://restcountries.eu/rest/v2/callingcode/${keyword}`
-        );
-        break;
+      // case 'callingcode':
+      //   data = await axios.get(
+      //     `https://restcountries.com/v2/callingcode/${keyword}`
+      //   );
+      //   break;
       case 'region':
         data = await axios.get(
-          `https://restcountries.eu/rest/v2/region/${keyword}`
-        );
-        break;
-      case 'regionalbloc':
-        data = await axios.get(
-          `https://restcountries.eu/rest/v2/regionalbloc/${keyword}`
+          `https://restcountries.com/v3/region/${keyword}`
         );
         break;
       default:

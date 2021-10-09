@@ -29,17 +29,14 @@ const HomeScreen = () => {
       case 'language':
         setPlaceholder('example : eng');
         break;
-      case 'capitalcity':
-        setPlaceholder('example : Washington');
-        break;
+      // case 'capitalcity':
+      //   setPlaceholder('example : Washington');
+      //   break;
       case 'callingcode':
         setPlaceholder('example : 1');
         break;
       case 'region':
         setPlaceholder('example : Americas');
-        break;
-      case 'regionalbloc':
-        setPlaceholder('example : NAFTA');
         break;
       default:
         break;
@@ -79,9 +76,9 @@ const HomeScreen = () => {
             <Option value='currency'>Currency</Option>
             <Option value='language'>Language</Option>
             <Option value='capitalcity'>Capital City</Option>
-            <Option value='callingcode'>Calling Code</Option>
+            {/* <Option value='callingcode'>Calling Code</Option> */}
             <Option value='region'>Region</Option>
-            <Option value='regionalbloc'>Regional Bloc</Option>
+            {/* <Option value='regionalbloc'>Regional Bloc</Option> */}
           </Select>
         </div>
         <div className='countries-main-input'>

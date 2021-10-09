@@ -13,16 +13,17 @@ const CountryCard = ({ country }) => {
     <Card
       style={{ width: '300px', height: 'auto' }}
       cover={
-        <img className='card-img-container' alt='example' src={country.flag} />
+        <img className='card-img-container' alt='example' src={country.flags[1]} />
       }>
       <div className='title-row'>
         <div className='country-name'>
-          {country.name.length > 18
-            ? country.name.substring(0, 18).concat('...')
-            : country.name}
+          {country.name.official.length > 18 ? country.name.official.substring(0, 18).concat('...') : country.name.official}
+          {/* {country.name.official.length > 18
+            ? country.official.name.substring(0, 18).concat('...')
+            : country.official.name} */}
         </div>
       </div>
-      <div className='top-row'>
+      {/* <div className='top-row'>
         <div className='info-box'>
           <div className='country-calling-code-title'>Calling Code</div>
           <div className='country-phone-code'>{country.callingCodes}</div>
@@ -48,7 +49,7 @@ const CountryCard = ({ country }) => {
           <div className='country-region-title'>Region</div>
           <div className='country-region'>{country.region}</div>
         </div>
-      </div>
+      </div> */}
 
       <div className='bottom-row'>
         <button
